@@ -14,26 +14,27 @@
       <div class="sidebar-brand-icon commercial">$</div>
       <div>
         <h2>Commercial Portal</h2>
-        <span>Shop BE</span>
+        <span>Offer, Pricing &amp; Promotion</span>
       </div>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-section-title">Offers</div>
       <ul class="sidebar-nav">
-        <li><a href="offers.html"><span class="nav-icon">&#127873;</span> Offer Engine</a></li>
+        <li><a href="offers.html"><span class="nav-icon">&#127873;</span> Offer Builder</a></li>
+        <li><a href="addons.html"><span class="nav-icon">&#x2795;</span> Add-on Configuration</a></li>
       </ul>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-section-title">Billing</div>
       <ul class="sidebar-nav">
-        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Billing Plans</a></li>
+        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Plan Lengths</a></li>
       </ul>
     </div>
     <div class="sidebar-section">
-      <div class="sidebar-section-title">Promotions & Pricing</div>
+      <div class="sidebar-section-title">Pricing &amp; Promotions</div>
       <ul class="sidebar-nav">
-        <li><a href="promotions.html" class="active"><span class="nav-icon">&#127941;</span> Promotions</a></li>
-        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Engine</a></li>
+        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Strategies</a></li>
+        <li><a href="promotions.html" class="active"><span class="nav-icon">&#127941;</span> Promotion Manager</a></li>
       </ul>
     </div>
     <div class="sidebar-section">
@@ -63,8 +64,8 @@
     <div class="content">
       <div class="page-header">
         <div>
-          <h1>Promotion Engine</h1>
-          <p>Manage coupon codes, referral credits, and "First Month" logic independently of base pricing. Promotions are applied on top of Offer pricing by the Pricing Engine.</p>
+          <h1>Promotion Manager</h1>
+          <p>Create and link coupon codes or referral credits directly to specific Offer IDs rather than individual items. Promotions are applied on top of Offer pricing by the Pricing Engine.</p>
         </div>
       </div>
 
@@ -127,7 +128,8 @@
                   <td><span class="badge badge-primary">Coupon</span></td>
                   <td><strong>50% off</strong> first payment</td>
                   <td>
-                    <span class="tag">All WL offers</span>
+                    <span class="tag">OFR-WL-SEMA-*</span>
+                    <span class="tag">OFR-WL-TIRZ-*</span>
                   </td>
                   <td>
                     <div style="font-size:12px;">1 Jan — 31 Mar 2026</div>
@@ -153,7 +155,8 @@
                   <td><span class="badge badge-warning">Referral</span></td>
                   <td><strong>&pound;20 off</strong> next payment</td>
                   <td>
-                    <span class="tag">All offers</span>
+                    <span class="tag">OFR-*</span>
+                    <div class="text-muted" style="font-size:11px;">all Offer IDs</div>
                   </td>
                   <td>
                     <div style="font-size:12px;">Ongoing</div>
@@ -176,7 +179,7 @@
                   <td><span class="badge badge-info">Auto-Rule</span></td>
                   <td><strong>100% off</strong> first payment</td>
                   <td>
-                    <span class="tag">Hair offers only</span>
+                    <span class="tag">OFR-HL-*</span>
                   </td>
                   <td>
                     <div style="font-size:12px;">1 Feb — 28 Feb 2026</div>
@@ -202,7 +205,8 @@
                   <td><span class="badge badge-primary">Coupon</span></td>
                   <td><strong>20% off</strong> all payments</td>
                   <td>
-                    <span class="tag">All offers</span>
+                    <span class="tag">OFR-*</span>
+                    <div class="text-muted" style="font-size:11px;">all Offer IDs</div>
                   </td>
                   <td>
                     <div style="font-size:12px;">Ongoing</div>
@@ -225,7 +229,7 @@
                   <td><span class="badge badge-primary">Coupon</span></td>
                   <td><strong>30% off</strong> first 3 payments</td>
                   <td>
-                    <span class="tag">12M plans only</span>
+                    <span class="tag">OFR-*-12M-*</span>
                   </td>
                   <td>
                     <div style="font-size:12px;">25 Nov — 2 Dec 2025</div>
@@ -312,16 +316,18 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>Applicable Offers</label>
+              <label>Link to Offer IDs</label>
               <select class="form-control" multiple style="min-height:80px;">
-                <option>All Offers</option>
-                <option>Weight Loss offers only</option>
-                <option>Hair offers only</option>
-                <option>ED offers only</option>
-                <option>TRT offers only</option>
-                <option>12-month plans only</option>
+                <option>OFR-* (All Offer IDs)</option>
+                <option>OFR-WL-SEMA-6M-MTH — Semaglutide 6M Monthly</option>
+                <option>OFR-WL-SEMA-12M-FIX — Semaglutide 12M All-In</option>
+                <option>OFR-WL-SEMA-3M-MTH — Semaglutide 3M Starter</option>
+                <option>OFR-HL-FIN-1M-SUB — Finasteride Monthly</option>
+                <option>OFR-HL-FINMNX-3M-SUB — Fin+Min Quarterly</option>
+                <option>OFR-TRT-CYP-HCG-SUB — TRT Membership</option>
+                <option>OFR-ED-SIL-1M-PRN — Sildenafil Monthly</option>
               </select>
-              <div class="help-text">Hold Ctrl/Cmd to select multiple</div>
+              <div class="help-text">Promotions are linked directly to specific Offer IDs, not individual items. Hold Ctrl/Cmd to select multiple.</div>
             </div>
             <div class="form-group">
               <label>Usage Limit</label>
