@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatment Plans — Clinical Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon clinical">C</div>
+      <div>
+        <h2>Clinical Portal</h2>
+        <span>Doctor BE</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Eligibility</div>
+      <ul class="sidebar-nav">
+        <li><a href="eligibility-rules.html"><span class="nav-icon">&#x2714;</span> Eligibility Rules</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Treatment</div>
+      <ul class="sidebar-nav">
+        <li><a href="treatment-plans.html" class="active"><span class="nav-icon">&#x1F489;</span> Treatment Plans</a></li>
+        <li><a href="consumption-rates.html"><span class="nav-icon">&#x23F1;</span> Consumption Rates</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="eligibility-rules.html">Clinical Portal</a>
+        <span>/</span>
+        <strong>Treatment Plans</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Treatment Plan</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Clinical Treatment Plans</h1>
+          <p>Define medical protocols including dosage, titration sequences, and safety boundaries. Each plan maps a clinical pathway independent of commercial pricing.</p>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active">All Plans</button>
+        <button class="tab">Weight Loss</button>
+        <button class="tab">Hair</button>
+        <button class="tab">ED</button>
+        <button class="tab">TRT</button>
+        <button class="tab">Skin</button>
+      </div>
+
+      <!-- Plans Table -->
+      <div class="card">
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plan Name</th>
+                  <th>Code</th>
+                  <th>Category</th>
+                  <th>Medication</th>
+                  <th>Titration Steps</th>
+                  <th>Max Duration</th>
+                  <th>Status</th>
+                  <th>Linked Offers</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="treatment-plan-detail.html" style="font-weight:600;">Semaglutide Standard Titration</a>
+                    <div class="text-muted" style="font-size:12px;">Starting dose 0.25mg, target 2.4mg</div>
+                  </td>
+                  <td class="font-mono">CTP-WL-SEMA-STD</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td>Semaglutide (Wegovy)</td>
+                  <td>
+                    <div style="display:flex;gap:4px;align-items:center;">
+                      <span class="tag">0.25mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">0.5mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">1mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">1.7mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">2.4mg</span>
+                    </div>
+                  </td>
+                  <td>Ongoing</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>4</td>
+                  <td>
+                    <a href="treatment-plan-detail.html" class="btn btn-ghost btn-sm">View</a>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Tirzepatide Standard Titration</div>
+                    <div class="text-muted" style="font-size:12px;">Starting dose 2.5mg, target 15mg</div>
+                  </td>
+                  <td class="font-mono">CTP-WL-TIRZ-STD</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td>Tirzepatide (Mounjaro)</td>
+                  <td>
+                    <div style="display:flex;gap:4px;align-items:center;">
+                      <span class="tag">2.5mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">5mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">7.5mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">10mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">15mg</span>
+                    </div>
+                  </td>
+                  <td>Ongoing</td>
+                  <td><span class="badge badge-warning"><span class="status-dot draft"></span>Draft</span></td>
+                  <td>0</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Finasteride 1mg Daily</div>
+                    <div class="text-muted" style="font-size:12px;">No titration — fixed dose</div>
+                  </td>
+                  <td class="font-mono">CTP-HL-FIN-1MG</td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td>Finasteride</td>
+                  <td>
+                    <span class="tag">1mg daily</span>
+                    <span class="text-muted" style="font-size:12px;margin-left:4px;">fixed</span>
+                  </td>
+                  <td>Ongoing</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>3</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Finasteride + Minoxidil Combo</div>
+                    <div class="text-muted" style="font-size:12px;">Oral finasteride + topical minoxidil</div>
+                  </td>
+                  <td class="font-mono">CTP-HL-FINMNX-CMB</td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td>Finasteride + Minoxidil</td>
+                  <td>
+                    <span class="tag">1mg + 5%</span>
+                    <span class="text-muted" style="font-size:12px;margin-left:4px;">fixed</span>
+                  </td>
+                  <td>Ongoing</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>2</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Sildenafil PRN</div>
+                    <div class="text-muted" style="font-size:12px;">As-needed dosing, 50mg or 100mg</div>
+                  </td>
+                  <td class="font-mono">CTP-ED-SIL-PRN</td>
+                  <td><span class="badge badge-warning">ED</span></td>
+                  <td>Sildenafil</td>
+                  <td>
+                    <div style="display:flex;gap:4px;align-items:center;">
+                      <span class="tag">50mg</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">100mg</span>
+                    </div>
+                  </td>
+                  <td>Ongoing</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>2</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">TRT — Testosterone Cypionate</div>
+                    <div class="text-muted" style="font-size:12px;">Injectable TRT with HCG support</div>
+                  </td>
+                  <td class="font-mono">CTP-TRT-CYP-STD</td>
+                  <td><span class="badge badge-danger">TRT</span></td>
+                  <td>Testosterone Cypionate + HCG</td>
+                  <td>
+                    <div style="display:flex;gap:4px;align-items:center;">
+                      <span class="tag">100mg/wk</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">150mg/wk</span>
+                      <span style="color:var(--text-muted);">&rarr;</span>
+                      <span class="tag">200mg/wk</span>
+                    </div>
+                  </td>
+                  <td>Ongoing</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>3</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

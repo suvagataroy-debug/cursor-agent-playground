@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalog — Supply Chain Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon supply">S</div>
+      <div>
+        <h2>Supply Chain Portal</h2>
+        <span>Pharmacy BE</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Catalog</div>
+      <ul class="sidebar-nav">
+        <li><a href="catalog.html" class="active"><span class="nav-icon">&#128218;</span> Product Catalog <span class="badge">34</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Logistics</div>
+      <ul class="sidebar-nav">
+        <li><a href="shipping-rules.html"><span class="nav-icon">&#128666;</span> Shipping Rules</a></li>
+        <li><a href="fulfillment-bundles.html"><span class="nav-icon">&#128230;</span> Fulfilment Bundles</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="catalog.html">Supply Chain Portal</a>
+        <span>/</span>
+        <strong>Product Catalog</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Import SKUs</button>
+        <button class="btn btn-primary btn-sm">+ New SKU</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Product Catalog</h1>
+          <p>Manage SKU attributes, base variants, inventory levels, and weight/dimensions. This is the single source of truth for all items in the system — medications, accessories, and supplements.</p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-label">Total SKUs</div>
+          <div class="stat-value">34</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Medications</div>
+          <div class="stat-value">18</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Accessories</div>
+          <div class="stat-value">10</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Low Stock Alerts</div>
+          <div class="stat-value text-danger">3</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active">All Items</button>
+        <button class="tab">Medications</button>
+        <button class="tab">Accessories</button>
+        <button class="tab">Supplements</button>
+        <button class="tab">Low Stock</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search-input">
+          <input type="text" placeholder="Search by SKU, medication name, or category...">
+        </div>
+        <select class="form-control" style="width:150px;">
+          <option>All Categories</option>
+          <option>Weight Loss</option>
+          <option>Hair</option>
+          <option>ED</option>
+          <option>TRT</option>
+        </select>
+        <select class="form-control" style="width:130px;">
+          <option>All Types</option>
+          <option>Medication</option>
+          <option>Accessory</option>
+          <option>Supplement</option>
+        </select>
+        <select class="form-control" style="width:130px;">
+          <option>All Stock</option>
+          <option>In Stock</option>
+          <option>Low Stock</option>
+          <option>Out of Stock</option>
+        </select>
+      </div>
+
+      <!-- Catalog Table -->
+      <div class="card">
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product Name</th>
+                  <th>Type</th>
+                  <th>Category</th>
+                  <th>Dosage / Spec</th>
+                  <th>Units</th>
+                  <th>Base Price</th>
+                  <th>Tax</th>
+                  <th>Stock</th>
+                  <th>Tracked</th>
+                  <th>Shipping</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="sku-detail.html" class="font-mono" style="font-weight:600;">SEMA-025-PEN</a></td>
+                  <td>Semaglutide Pen</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Weight Loss</td>
+                  <td>0.25mg</td>
+                  <td>1 pen</td>
+                  <td>&pound;165.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">2,400</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <a href="sku-detail.html" class="btn btn-ghost btn-sm">View</a>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">SEMA-050-PEN</td>
+                  <td>Semaglutide Pen</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Weight Loss</td>
+                  <td>0.5mg</td>
+                  <td>1 pen</td>
+                  <td>&pound;195.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">1,800</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">SEMA-100-PEN</td>
+                  <td>Semaglutide Pen</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Weight Loss</td>
+                  <td>1.0mg</td>
+                  <td>1 pen</td>
+                  <td>&pound;245.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">1,200</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">SEMA-170-PEN</td>
+                  <td>Semaglutide Pen</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Weight Loss</td>
+                  <td>1.7mg</td>
+                  <td>1 pen</td>
+                  <td>&pound;275.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-warning">320</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">SEMA-240-PEN</td>
+                  <td>Semaglutide Pen</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Weight Loss</td>
+                  <td>2.4mg</td>
+                  <td>1 pen</td>
+                  <td>&pound;320.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-danger">85</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">FIN-1MG-30</td>
+                  <td>Finasteride 1mg tablets</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Hair</td>
+                  <td>1mg</td>
+                  <td>30 tabs</td>
+                  <td>&pound;48.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">5,000</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">FIN-1MG-90</td>
+                  <td>Finasteride 1mg tablets</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Hair</td>
+                  <td>1mg</td>
+                  <td>90 tabs</td>
+                  <td>&pound;120.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">3,200</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">MNX-5PCT-60ML</td>
+                  <td>Minoxidil 5% Solution</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>Hair</td>
+                  <td>5%</td>
+                  <td>1 bottle (60ml)</td>
+                  <td>&pound;28.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">4,100</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">TST-CYP-10ML</td>
+                  <td>Testosterone Cypionate</td>
+                  <td><span class="badge badge-primary">Medication</span></td>
+                  <td>TRT</td>
+                  <td>200mg/ml</td>
+                  <td>1 vial (10ml)</td>
+                  <td>&pound;95.00</td>
+                  <td>VAT Exempt</td>
+                  <td><span class="text-success">800</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">ACC-SHARPS-1L</td>
+                  <td>Sharps Bin (1L)</td>
+                  <td><span class="tag">Accessory</span></td>
+                  <td>General</td>
+                  <td>—</td>
+                  <td>1 bin</td>
+                  <td>&pound;0.00</td>
+                  <td>Zero Rated</td>
+                  <td><span class="text-success">6,000</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">ACC-NEEDLES-4</td>
+                  <td>Injection Needles (x4)</td>
+                  <td><span class="tag">Accessory</span></td>
+                  <td>General</td>
+                  <td>—</td>
+                  <td>4 needles</td>
+                  <td>&pound;0.00</td>
+                  <td>Zero Rated</td>
+                  <td><span class="text-success">12,000</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">ACC-SWABS-10</td>
+                  <td>Alcohol Swabs (x10)</td>
+                  <td><span class="tag">Accessory</span></td>
+                  <td>General</td>
+                  <td>—</td>
+                  <td>10 swabs</td>
+                  <td>&pound;0.00</td>
+                  <td>Zero Rated</td>
+                  <td><span class="text-success">15,000</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-mono" style="font-weight:600;">SUP-B12-30</td>
+                  <td>Vitamin B12 Supplement</td>
+                  <td><span class="badge badge-warning">Supplement</span></td>
+                  <td>General</td>
+                  <td>1000mcg</td>
+                  <td>30 tabs</td>
+                  <td>&pound;9.99</td>
+                  <td>Standard (20%)</td>
+                  <td><span class="text-success">8,000</span></td>
+                  <td><span class="badge badge-danger">Not tracked</span></td>
+                  <td><span class="badge badge-primary">Required</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">View</button>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

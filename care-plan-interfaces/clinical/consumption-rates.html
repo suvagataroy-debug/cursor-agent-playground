@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumption Rates — Clinical Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon clinical">C</div>
+      <div>
+        <h2>Clinical Portal</h2>
+        <span>Doctor BE</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Eligibility</div>
+      <ul class="sidebar-nav">
+        <li><a href="eligibility-rules.html"><span class="nav-icon">&#x2714;</span> Eligibility Rules</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Treatment</div>
+      <ul class="sidebar-nav">
+        <li><a href="treatment-plans.html"><span class="nav-icon">&#x1F489;</span> Treatment Plans</a></li>
+        <li><a href="consumption-rates.html" class="active"><span class="nav-icon">&#x23F1;</span> Consumption Rates</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="eligibility-rules.html">Clinical Portal</a>
+        <span>/</span>
+        <strong>Consumption Rates</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Consumption Rate</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Consumption Rates</h1>
+          <p>Define how quickly patients consume each SKU. This drives shipping frequency independently of billing cycles. A patient safely using a pen over 6 weeks instead of 4 will have their next ship date adjusted without changing their billing plan.</p>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div style="background:var(--primary-light);border:1px solid #c5d9f7;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:18px;">&#9432;</span>
+        <div style="font-size:13px;line-height:1.6;">
+          <strong>Delinked from Billing:</strong> Consumption rates affect the <em>Shipping Service</em> (next ship date calculation) but do NOT affect the <em>Billing Engine</em>. A patient on a monthly billing cycle may receive their medication every 4 or 6 weeks depending on their consumption rate — the billing remains unchanged.
+        </div>
+      </div>
+
+      <!-- Consumption Rates Table -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>All Consumption Rates</h3>
+          <div style="display:flex;gap:8px;">
+            <select class="form-control" style="width:150px;padding:6px 10px;font-size:12px;">
+              <option>All Categories</option>
+              <option>Weight Loss</option>
+              <option>Hair</option>
+              <option>ED</option>
+              <option>TRT</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Medication</th>
+                  <th>Dose</th>
+                  <th>Category</th>
+                  <th>Standard Rate</th>
+                  <th>Extended Rate</th>
+                  <th>Unit</th>
+                  <th>Affects Shipping</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono">SEMA-025-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>0.25mg</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td><strong>4 weeks</strong></td>
+                  <td>6 weeks</td>
+                  <td>1 pen</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-050-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>0.5mg</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td><strong>4 weeks</strong></td>
+                  <td>6 weeks</td>
+                  <td>1 pen</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-100-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>1.0mg</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td><strong>4 weeks</strong></td>
+                  <td>6 weeks</td>
+                  <td>1 pen</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-170-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>1.7mg</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td><strong>4 weeks</strong></td>
+                  <td>5 weeks</td>
+                  <td>1 pen</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-240-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>2.4mg</td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td><strong>4 weeks</strong></td>
+                  <td>—</td>
+                  <td>1 pen</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">FIN-1MG-30</td>
+                  <td>Finasteride</td>
+                  <td>1mg</td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td><strong>30 days</strong></td>
+                  <td>—</td>
+                  <td>30 tabs</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">FIN-1MG-90</td>
+                  <td>Finasteride</td>
+                  <td>1mg</td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td><strong>90 days</strong></td>
+                  <td>—</td>
+                  <td>90 tabs</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">MNX-5PCT-60ML</td>
+                  <td>Minoxidil</td>
+                  <td>5%</td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td><strong>30 days</strong></td>
+                  <td>45 days</td>
+                  <td>1 bottle (60ml)</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">TST-CYP-10ML</td>
+                  <td>Testosterone Cypionate</td>
+                  <td>200mg/ml</td>
+                  <td><span class="badge badge-danger">TRT</span></td>
+                  <td><strong>10 weeks</strong></td>
+                  <td>12 weeks</td>
+                  <td>1 vial (10ml)</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SIL-50MG-8</td>
+                  <td>Sildenafil</td>
+                  <td>50mg</td>
+                  <td><span class="badge badge-warning">ED</span></td>
+                  <td><strong>30 days</strong></td>
+                  <td>60 days</td>
+                  <td>8 tabs</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consumption Rate Edit Form -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Edit Consumption Rate — SEMA-025-PEN</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>SKU</label>
+              <input type="text" class="form-control" value="SEMA-025-PEN" disabled>
+            </div>
+            <div class="form-group">
+              <label>Medication</label>
+              <input type="text" class="form-control" value="Semaglutide 0.25mg Pen" disabled>
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Standard Consumption Period</label>
+              <div style="display:flex;gap:8px;">
+                <input type="number" class="form-control" value="4" style="width:80px;">
+                <select class="form-control" style="width:120px;">
+                  <option selected>weeks</option>
+                  <option>days</option>
+                </select>
+              </div>
+              <div class="help-text">Typical time to use 1 unit</div>
+            </div>
+            <div class="form-group">
+              <label>Extended Consumption Period</label>
+              <div style="display:flex;gap:8px;">
+                <input type="number" class="form-control" value="6" style="width:80px;">
+                <select class="form-control" style="width:120px;">
+                  <option selected>weeks</option>
+                  <option>days</option>
+                </select>
+              </div>
+              <div class="help-text">Clinician-approved slower rate</div>
+            </div>
+            <div class="form-group">
+              <label>Units per Shipment</label>
+              <input type="number" class="form-control" value="1">
+              <div class="help-text">How many units shipped per cycle</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Shipping Impact</label>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+              <span style="font-size:13px;">Recalculate next ship date based on consumption rate</span>
+            </div>
+            <div class="help-text mt-1">When enabled, the Shipping Service uses this rate to determine when the next shipment is due. This is independent of the billing frequency.</div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px;">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

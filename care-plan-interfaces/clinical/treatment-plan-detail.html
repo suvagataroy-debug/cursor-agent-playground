@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semaglutide Standard Titration — Clinical Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon clinical">C</div>
+      <div>
+        <h2>Clinical Portal</h2>
+        <span>Doctor BE</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Eligibility</div>
+      <ul class="sidebar-nav">
+        <li><a href="eligibility-rules.html"><span class="nav-icon">&#x2714;</span> Eligibility Rules</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Treatment</div>
+      <ul class="sidebar-nav">
+        <li><a href="treatment-plans.html" class="active"><span class="nav-icon">&#x1F489;</span> Treatment Plans</a></li>
+        <li><a href="consumption-rates.html"><span class="nav-icon">&#x23F1;</span> Consumption Rates</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="treatment-plans.html">Treatment Plans</a>
+        <span>/</span>
+        <strong>Semaglutide Standard Titration</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Duplicate Plan</button>
+        <button class="btn btn-primary btn-sm">Edit Plan</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Semaglutide Standard Titration</h1>
+          <p>Clinical treatment protocol for GLP-1 weight loss pathway. Delinked from commercial billing — this defines the medical journey only.</p>
+        </div>
+        <span class="badge badge-success" style="font-size:13px;padding:6px 14px;"><span class="status-dot active"></span>Active</span>
+      </div>
+
+      <!-- Plan Overview -->
+      <div class="detail-layout">
+        <div>
+          <!-- Core Details -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Plan Details</h3>
+            </div>
+            <div class="card-body-flush">
+              <dl class="detail-grid">
+                <dt>Plan Code</dt>
+                <dd class="font-mono">CTP-WL-SEMA-STD</dd>
+                <dt>Category</dt>
+                <dd><span class="badge badge-primary">Weight Loss</span></dd>
+                <dt>Medication</dt>
+                <dd>Semaglutide (Wegovy)</dd>
+                <dt>Administration</dt>
+                <dd>Subcutaneous injection, once weekly</dd>
+                <dt>Starting Dose</dt>
+                <dd>0.25mg</dd>
+                <dt>Target Dose</dt>
+                <dd>2.4mg</dd>
+                <dt>Duration</dt>
+                <dd>Ongoing (no fixed end date)</dd>
+                <dt>Eligibility Rule</dt>
+                <dd><a href="eligibility-rules.html">ELIG-WL-GLP1-001</a></dd>
+                <dt>Requires Lab</dt>
+                <dd>No (clinical review at 12 weeks)</dd>
+                <dt>Controlled Med</dt>
+                <dd><span class="badge badge-danger">No</span></dd>
+              </dl>
+            </div>
+          </div>
+
+          <!-- Titration Sequence -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Titration Sequence</h3>
+              <button class="btn btn-secondary btn-sm">+ Add Step</button>
+            </div>
+            <div class="card-body">
+              <div class="titration-visual">
+                <div class="titration-step">
+                  <div class="dose-bubble">0.25</div>
+                  <div class="dose-label">0.25mg</div>
+                  <div class="dose-meta">Weeks 1–4<br>1 pen / 4 wks</div>
+                </div>
+                <div class="titration-arrow">&rarr;</div>
+                <div class="titration-step">
+                  <div class="dose-bubble">0.5</div>
+                  <div class="dose-label">0.5mg</div>
+                  <div class="dose-meta">Weeks 5–8<br>1 pen / 4 wks</div>
+                </div>
+                <div class="titration-arrow">&rarr;</div>
+                <div class="titration-step">
+                  <div class="dose-bubble">1.0</div>
+                  <div class="dose-label">1.0mg</div>
+                  <div class="dose-meta">Weeks 9–12<br>1 pen / 4 wks</div>
+                </div>
+                <div class="titration-arrow">&rarr;</div>
+                <div class="titration-step">
+                  <div class="dose-bubble">1.7</div>
+                  <div class="dose-label">1.7mg</div>
+                  <div class="dose-meta">Weeks 13–16<br>1 pen / 4 wks</div>
+                </div>
+                <div class="titration-arrow">&rarr;</div>
+                <div class="titration-step">
+                  <div class="dose-bubble" style="background:#e6f4ea;color:#0d904f;">2.4</div>
+                  <div class="dose-label">2.4mg</div>
+                  <div class="dose-meta">Week 17+<br>Maintenance</div>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Step</th>
+                      <th>SKU</th>
+                      <th>Dose</th>
+                      <th>Duration</th>
+                      <th>Consumption Rate</th>
+                      <th>Clinical Review</th>
+                      <th>Auto-Advance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>1</strong></td>
+                      <td class="font-mono">SEMA-025-PEN</td>
+                      <td>0.25mg</td>
+                      <td>4 weeks</td>
+                      <td>1 pen per 4 weeks</td>
+                      <td>—</td>
+                      <td>
+                        <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>2</strong></td>
+                      <td class="font-mono">SEMA-050-PEN</td>
+                      <td>0.5mg</td>
+                      <td>4 weeks</td>
+                      <td>1 pen per 4 weeks</td>
+                      <td>—</td>
+                      <td>
+                        <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>3</strong></td>
+                      <td class="font-mono">SEMA-100-PEN</td>
+                      <td>1.0mg</td>
+                      <td>4 weeks</td>
+                      <td>1 pen per 4 weeks</td>
+                      <td><span class="badge badge-warning">12-week review</span></td>
+                      <td>
+                        <label class="form-switch"><input type="checkbox"><span class="slider"></span></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>4</strong></td>
+                      <td class="font-mono">SEMA-170-PEN</td>
+                      <td>1.7mg</td>
+                      <td>4 weeks</td>
+                      <td>1 pen per 4 weeks</td>
+                      <td>—</td>
+                      <td>
+                        <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                      </td>
+                    </tr>
+                    <tr style="background:#f8fdf9;">
+                      <td><strong>5</strong></td>
+                      <td class="font-mono">SEMA-240-PEN</td>
+                      <td>2.4mg</td>
+                      <td>Ongoing</td>
+                      <td>1 pen per 4 weeks</td>
+                      <td><span class="badge badge-info">Quarterly review</span></td>
+                      <td>
+                        <span class="text-muted">Maintenance</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety Boundaries -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Safety Boundaries</h3>
+            </div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div>
+                  <h4 style="font-size:13px;font-weight:600;margin-bottom:12px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;">Dose-Down Triggers</h4>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td style="font-weight:500;">Severe GI Side Effects</td>
+                        <td><span class="badge badge-danger">Step back 1 dose</span></td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight:500;">Clinician Override</td>
+                        <td><span class="badge badge-warning">Manual step adjustment</span></td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight:500;">Weight loss &gt; 1kg/week avg</td>
+                        <td><span class="badge badge-warning">Hold current dose</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <h4 style="font-size:13px;font-weight:600;margin-bottom:12px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;">Pause / Stop Triggers</h4>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td style="font-weight:500;">Pregnancy detected</td>
+                        <td><span class="badge badge-danger">Immediate stop</span></td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight:500;">BMI &lt; 22</td>
+                        <td><span class="badge badge-danger">Clinical review required</span></td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight:500;">Missed 2 consecutive doses</td>
+                        <td><span class="badge badge-warning">Clinical review</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinician Messages -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Clinician Messages</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Approval Message</label>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-size:13px;line-height:1.7;">
+                  Hi <span class="tag">%patient%</span>,<br>
+                  Here's a link to your weight loss treatment plan. Make sure you read it to get the most out of the treatment in the safest way possible. 
+                  Remember, it takes 4-8 weeks at each dose for your body to adjust.<br><br>
+                  If you have any questions or anything changes in your medical condition, please message us directly using this secure messaging channel.<br>
+                  All the best,<br>
+                  <span class="tag">%clinician%</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Renewal Message</label>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-size:13px;line-height:1.7;">
+                  Hi <span class="tag">%patient%</span>,<br>
+                  We have reviewed your treatment plan and are happy to continue your weight loss subscription.<br><br>
+                  Please get in touch via the messaging facility if there are any changes to your drug/medical history, or side effects you wish to speak to us about.<br>
+                  It is important you keep everyone involved in your care aware of any medications you are taking.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Linked Commercial Offers -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Linked Offers</h3>
+            </div>
+            <div class="card-body-flush">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">6M Monthly Plan</div>
+                      <div class="text-muted" style="font-size:12px;">OFR-WL-SEMA-6M-MTH</div>
+                    </td>
+                    <td><span class="badge badge-success">Live</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">12M All-In Plan</div>
+                      <div class="text-muted" style="font-size:12px;">OFR-WL-SEMA-12M-FIX</div>
+                    </td>
+                    <td><span class="badge badge-success">Live</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">3M Starter Plan</div>
+                      <div class="text-muted" style="font-size:12px;">OFR-WL-SEMA-3M-MTH</div>
+                    </td>
+                    <td><span class="badge badge-success">Live</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">NHS Partnership Plan</div>
+                      <div class="text-muted" style="font-size:12px;">OFR-WL-SEMA-NHS</div>
+                    </td>
+                    <td><span class="badge badge-warning">Draft</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Consumption Rate Summary -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Consumption Rates</h3>
+            </div>
+            <div class="card-body">
+              <div style="font-size:13px;">
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Standard Rate</span>
+                  <strong>1 pen per 4 weeks</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Extended Rate</span>
+                  <strong>1 pen per 6 weeks</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;">
+                  <span class="text-muted">Affects Shipping</span>
+                  <strong>Yes — next ship date recalculated</strong>
+                </div>
+              </div>
+              <p class="help-text mt-2">When a patient is on an extended consumption rate (e.g. 6 weeks instead of 4), the shipping service recalculates the next ship date accordingly without affecting the billing cycle.</p>
+            </div>
+          </div>
+
+          <!-- Audit Log -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Change Log</h3>
+            </div>
+            <div class="card-body">
+              <div class="step-list">
+                <div class="step-item completed">
+                  <div class="step-title">Plan activated</div>
+                  <div class="step-meta">14 Feb 2026 · Dr. Sarah Chen</div>
+                </div>
+                <div class="step-item completed">
+                  <div class="step-title">Added 12-week clinical review gate at step 3</div>
+                  <div class="step-meta">10 Feb 2026 · Dr. James Wilson</div>
+                </div>
+                <div class="step-item completed">
+                  <div class="step-title">Extended consumption rate option added</div>
+                  <div class="step-meta">3 Feb 2026 · Dr. Sarah Chen</div>
+                </div>
+                <div class="step-item completed">
+                  <div class="step-title">Plan created</div>
+                  <div class="step-meta">15 Jan 2026 · Dr. Sarah Chen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

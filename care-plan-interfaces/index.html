@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual 2.0 — Care Plan Control Planes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { display: block; background: var(--bg); }
+    .landing { max-width: 1100px; margin: 0 auto; padding: 48px 32px; }
+    .landing-header { text-align: center; margin-bottom: 48px; }
+    .landing-header .logo {
+      width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #6c5ce7, #1a73e8);
+      display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 22px; margin-bottom: 20px;
+    }
+    .landing-header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    .landing-header p { font-size: 16px; color: var(--text-secondary); max-width: 640px; margin: 0 auto; }
+    .portal-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+    .portal-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 32px 28px; text-align: center; transition: all 0.2s; cursor: pointer; position: relative; overflow: hidden;
+    }
+    .portal-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: transparent; }
+    .portal-card .portal-icon {
+      width: 56px; height: 56px; border-radius: 14px; display: inline-flex; align-items: center;
+      justify-content: center; font-size: 26px; margin-bottom: 16px;
+    }
+    .portal-card.clinical .portal-icon { background: #e6f4ea; color: #0d904f; }
+    .portal-card.commercial .portal-icon { background: #e8f0fe; color: #1a73e8; }
+    .portal-card.supply .portal-icon { background: #fef7e0; color: #e37400; }
+    .portal-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .portal-card p { font-size: 13.5px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+    .portal-card .portal-screens { text-align: left; }
+    .portal-card .portal-screens a {
+      display: flex; align-items: center; gap: 8px; padding: 8px 12px; margin: 0 -12px;
+      border-radius: 6px; font-size: 13px; font-weight: 450; color: var(--text-primary); transition: background 0.15s;
+    }
+    .portal-card .portal-screens a:hover { background: var(--bg); text-decoration: none; }
+    .portal-card .portal-screens a .screen-arrow { margin-left: auto; color: var(--text-muted); font-size: 16px; }
+    .section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); margin-bottom: 16px; }
+    .arch-overview {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px;
+    }
+    .flow-diagram {
+      display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; padding: 24px 0;
+    }
+    .flow-box {
+      padding: 14px 20px; border-radius: 8px; text-align: center; min-width: 140px; border: 2px solid;
+    }
+    .flow-box .flow-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+    .flow-box .flow-name { font-size: 13px; font-weight: 600; margin-top: 2px; }
+    .flow-box.elig { border-color: #0d904f; background: #e6f4ea; color: #0d904f; }
+    .flow-box.clinical { border-color: #1a73e8; background: #e8f0fe; color: #1557b0; }
+    .flow-box.offer { border-color: #6c5ce7; background: #f0edff; color: #6c5ce7; }
+    .flow-box.pricing { border-color: #e37400; background: #fef7e0; color: #b85c00; }
+    .flow-box.billing { border-color: #d93025; background: #fce8e6; color: #d93025; }
+    .flow-box.shipping { border-color: #00838f; background: #e0f7fa; color: #00838f; }
+    .flow-arrow { font-size: 22px; color: var(--text-muted); padding: 0 10px; }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <div class="landing-header">
+      <div class="logo">M</div>
+      <h1>Care Plan Control Planes</h1>
+      <p>Configuration interfaces for Manual 2.0's care plan architecture. Manage clinical protocols, commercial offers, and supply chain logistics across three dedicated portals.</p>
+    </div>
+
+    <div class="portal-cards">
+      <!-- Clinical Portal -->
+      <div class="portal-card clinical">
+        <div class="portal-icon">&#9764;</div>
+        <h3>Clinical Portal</h3>
+        <p>Configure eligibility rules, treatment plans, titration sequences, and consumption rates. Owned by the Doctor BE.</p>
+        <div class="portal-screens">
+          <a href="clinical/eligibility-rules.html"><span>&#x2714;</span> Eligibility Rules <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="clinical/treatment-plans.html"><span>&#x1F489;</span> Treatment Plans <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="clinical/treatment-plan-detail.html"><span>&#x1F4CB;</span> Treatment Plan Detail <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="clinical/consumption-rates.html"><span>&#x23F1;</span> Consumption Rates <span class="screen-arrow">&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <!-- Commercial Portal -->
+      <div class="portal-card commercial">
+        <div class="portal-icon">&#128176;</div>
+        <h3>Commercial Portal</h3>
+        <p>Build offers, set plan lengths, configure pricing models, and launch promotional campaigns. Owned by the Shop BE.</p>
+        <div class="portal-screens">
+          <a href="commercial/offers.html"><span>&#127873;</span> Offer Engine <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="commercial/offer-detail.html"><span>&#128196;</span> Offer Builder <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="commercial/billing-plans.html"><span>&#128179;</span> Billing Plans <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="commercial/promotions.html"><span>&#127941;</span> Promotions <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="commercial/pricing.html"><span>&#128178;</span> Pricing Engine <span class="screen-arrow">&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <!-- Supply Chain Portal -->
+      <div class="portal-card supply">
+        <div class="portal-icon">&#128230;</div>
+        <h3>Supply Chain Portal</h3>
+        <p>Manage SKU catalog, inventory, shipping rules, and fulfilment logistics. Owned by the Pharmacy BE.</p>
+        <div class="portal-screens">
+          <a href="supply-chain/catalog.html"><span>&#128218;</span> Product Catalog <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="supply-chain/sku-detail.html"><span>&#128300;</span> SKU Detail <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="supply-chain/shipping-rules.html"><span>&#128666;</span> Shipping Rules <span class="screen-arrow">&rsaquo;</span></a>
+          <a href="supply-chain/fulfillment-bundles.html"><span>&#128230;</span> Fulfilment Bundles <span class="screen-arrow">&rsaquo;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Interaction Flow</div>
+    <div class="arch-overview">
+      <div class="flow-diagram">
+        <div class="flow-box elig">
+          <div class="flow-label">Step 1</div>
+          <div class="flow-name">Eligibility Engine</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-box clinical">
+          <div class="flow-label">Step 2</div>
+          <div class="flow-name">Treatment Plan</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-box offer">
+          <div class="flow-label">Step 3</div>
+          <div class="flow-name">Offer Engine</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-box pricing">
+          <div class="flow-label">Step 4</div>
+          <div class="flow-name">Pricing Engine</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-box billing">
+          <div class="flow-label">Step 5</div>
+          <div class="flow-name">Billing Engine</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-box shipping">
+          <div class="flow-label">Step 6</div>
+          <div class="flow-name">Shipping Service</div>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--text-secondary);font-size:13px;margin-top:8px;">
+        Patient validated &rarr; Clinical plan mapped &rarr; Offer presented &rarr; Price calculated &rarr; Billing started &rarr; Fulfilment scheduled
+      </p>
+    </div>
+  </div>
+</body>
+</html>

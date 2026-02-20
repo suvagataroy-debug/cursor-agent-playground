@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promotions — Commercial Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon commercial">$</div>
+      <div>
+        <h2>Commercial Portal</h2>
+        <span>Shop BE</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Offers</div>
+      <ul class="sidebar-nav">
+        <li><a href="offers.html"><span class="nav-icon">&#127873;</span> Offer Engine</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Billing</div>
+      <ul class="sidebar-nav">
+        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Billing Plans</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Promotions & Pricing</div>
+      <ul class="sidebar-nav">
+        <li><a href="promotions.html" class="active"><span class="nav-icon">&#127941;</span> Promotions</a></li>
+        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Engine</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="offers.html">Commercial Portal</a>
+        <span>/</span>
+        <strong>Promotions</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Promotion</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Promotion Engine</h1>
+          <p>Manage coupon codes, referral credits, and "First Month" logic independently of base pricing. Promotions are applied on top of Offer pricing by the Pricing Engine.</p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-label">Active Promotions</div>
+          <div class="stat-value">8</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Total Redemptions (30d)</div>
+          <div class="stat-value">3,842</div>
+          <div class="stat-change up">+22% vs prev period</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Discount Given (30d)</div>
+          <div class="stat-value">&pound;187K</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Conversion Lift</div>
+          <div class="stat-value">+18%</div>
+          <div class="stat-change">on promoted offers</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active">All Promotions</button>
+        <button class="tab">Coupon Codes</button>
+        <button class="tab">Referral Credits</button>
+        <button class="tab">Automated Rules</button>
+        <button class="tab">Expired</button>
+      </div>
+
+      <!-- Promotions Table -->
+      <div class="card mb-4">
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Promotion</th>
+                  <th>Code</th>
+                  <th>Type</th>
+                  <th>Discount</th>
+                  <th>Applies To</th>
+                  <th>Validity</th>
+                  <th>Usage</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Welcome Offer — 50% Off</div>
+                    <div class="text-muted" style="font-size:12px;">First month 50% discount for new patients</div>
+                  </td>
+                  <td class="font-mono">WELCOME50</td>
+                  <td><span class="badge badge-primary">Coupon</span></td>
+                  <td><strong>50% off</strong> first payment</td>
+                  <td>
+                    <span class="tag">All WL offers</span>
+                  </td>
+                  <td>
+                    <div style="font-size:12px;">1 Jan — 31 Mar 2026</div>
+                  </td>
+                  <td>
+                    <div>1,420 / 5,000</div>
+                    <div style="background:#e8eaed;border-radius:4px;height:4px;margin-top:4px;">
+                      <div style="background:var(--primary);border-radius:4px;height:4px;width:28%;"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Pause</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Referral Credit</div>
+                    <div class="text-muted" style="font-size:12px;">&pound;20 credit for referrer and referee</div>
+                  </td>
+                  <td class="font-mono">REFER20</td>
+                  <td><span class="badge badge-warning">Referral</span></td>
+                  <td><strong>&pound;20 off</strong> next payment</td>
+                  <td>
+                    <span class="tag">All offers</span>
+                  </td>
+                  <td>
+                    <div style="font-size:12px;">Ongoing</div>
+                  </td>
+                  <td>
+                    <div>842 / unlimited</div>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Pause</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">First Month Free — Hair</div>
+                    <div class="text-muted" style="font-size:12px;">Automated: free first month on hair plans</div>
+                  </td>
+                  <td class="font-mono">AUTO-HAIR-1STFREE</td>
+                  <td><span class="badge badge-info">Auto-Rule</span></td>
+                  <td><strong>100% off</strong> first payment</td>
+                  <td>
+                    <span class="tag">Hair offers only</span>
+                  </td>
+                  <td>
+                    <div style="font-size:12px;">1 Feb — 28 Feb 2026</div>
+                  </td>
+                  <td>
+                    <div>580 / 1,000</div>
+                    <div style="background:#e8eaed;border-radius:4px;height:4px;margin-top:4px;">
+                      <div style="background:var(--warning);border-radius:4px;height:4px;width:58%;"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Pause</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">NHS20 Discount</div>
+                    <div class="text-muted" style="font-size:12px;">20% off for NHS workers</div>
+                  </td>
+                  <td class="font-mono">NHS20</td>
+                  <td><span class="badge badge-primary">Coupon</span></td>
+                  <td><strong>20% off</strong> all payments</td>
+                  <td>
+                    <span class="tag">All offers</span>
+                  </td>
+                  <td>
+                    <div style="font-size:12px;">Ongoing</div>
+                  </td>
+                  <td>
+                    <div>312 / unlimited</div>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Pause</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Black Friday 2025</div>
+                    <div class="text-muted" style="font-size:12px;">30% off 12-month plans</div>
+                  </td>
+                  <td class="font-mono">BF2025</td>
+                  <td><span class="badge badge-primary">Coupon</span></td>
+                  <td><strong>30% off</strong> first 3 payments</td>
+                  <td>
+                    <span class="tag">12M plans only</span>
+                  </td>
+                  <td>
+                    <div style="font-size:12px;">25 Nov — 2 Dec 2025</div>
+                  </td>
+                  <td>
+                    <div>2,100 / 2,100</div>
+                    <div style="background:#e8eaed;border-radius:4px;height:4px;margin-top:4px;">
+                      <div style="background:var(--text-muted);border-radius:4px;height:4px;width:100%;"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge badge-info"><span class="status-dot inactive"></span>Expired</span></td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create Promotion Form -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Create Promotion</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Promotion Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Spring Sale 2026">
+            </div>
+            <div class="form-group">
+              <label>Coupon Code</label>
+              <input type="text" class="form-control font-mono" placeholder="e.g. SPRING2026">
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Promotion Type</label>
+              <select class="form-control">
+                <option>Coupon Code</option>
+                <option>Referral Credit</option>
+                <option>Automated Rule</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Discount Type</label>
+              <select class="form-control">
+                <option>Percentage off</option>
+                <option>Fixed amount off</option>
+                <option>Free period</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Discount Value</label>
+              <div style="display:flex;gap:8px;">
+                <input type="number" class="form-control" placeholder="50" style="width:80px;">
+                <select class="form-control" style="width:80px;">
+                  <option>%</option>
+                  <option>&pound;</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Applies To</label>
+              <select class="form-control">
+                <option>First payment only</option>
+                <option>First N payments</option>
+                <option>All payments</option>
+                <option>One-time credit</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Valid From</label>
+              <input type="date" class="form-control" value="2026-03-01">
+            </div>
+            <div class="form-group">
+              <label>Valid Until</label>
+              <input type="date" class="form-control" value="2026-03-31">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Applicable Offers</label>
+              <select class="form-control" multiple style="min-height:80px;">
+                <option>All Offers</option>
+                <option>Weight Loss offers only</option>
+                <option>Hair offers only</option>
+                <option>ED offers only</option>
+                <option>TRT offers only</option>
+                <option>12-month plans only</option>
+              </select>
+              <div class="help-text">Hold Ctrl/Cmd to select multiple</div>
+            </div>
+            <div class="form-group">
+              <label>Usage Limit</label>
+              <input type="number" class="form-control" placeholder="5000 (blank = unlimited)">
+              <div class="help-text">Maximum number of times this promo can be redeemed</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Stackable</label>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+              <label class="form-switch"><input type="checkbox"><span class="slider"></span></label>
+              <span style="font-size:13px;">Allow this promotion to stack with other promotions</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px;">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Create Promotion</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

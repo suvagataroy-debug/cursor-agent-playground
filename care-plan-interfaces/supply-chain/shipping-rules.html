@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Rules — Supply Chain Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon supply">S</div>
+      <div>
+        <h2>Supply Chain Portal</h2>
+        <span>Pharmacy BE</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Catalog</div>
+      <ul class="sidebar-nav">
+        <li><a href="catalog.html"><span class="nav-icon">&#128218;</span> Product Catalog</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Logistics</div>
+      <ul class="sidebar-nav">
+        <li><a href="shipping-rules.html" class="active"><span class="nav-icon">&#128666;</span> Shipping Rules</a></li>
+        <li><a href="fulfillment-bundles.html"><span class="nav-icon">&#128230;</span> Fulfilment Bundles</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="catalog.html">Supply Chain Portal</a>
+        <span>/</span>
+        <strong>Shipping Rules</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Shipping Rule</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Shipping Rules</h1>
+          <p>The Shipping Service orchestrates the delivery schedule — it knows when a shipment is due (based on clinical consumption rate) and what to pack. These rules define the logistics layer.</p>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div style="background:var(--warning-light);border:1px solid #f0d9a8;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:18px;">&#9888;</span>
+        <div style="font-size:13px;line-height:1.6;">
+          <strong>Consumption-Driven Shipping:</strong> The "Next Ship Date" is calculated from the <em>Clinical Portal's Consumption Rate</em>, NOT the billing cycle. A patient billed monthly may receive shipments every 4 or 6 weeks. The Shipping Service simply responds to: "When does this patient's current supply run out?"
+        </div>
+      </div>
+
+      <!-- Shipping Rules Table -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Shipping Schedule Rules</h3>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rule Name</th>
+                  <th>Code</th>
+                  <th>Applies To</th>
+                  <th>Trigger</th>
+                  <th>Carrier</th>
+                  <th>Service Level</th>
+                  <th>Lead Time</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:600;">GLP-1 Injectable — Cold Chain</td>
+                  <td class="font-mono">SHIP-WL-INJ-COLD</td>
+                  <td>
+                    <span class="tag">SEMA-*-PEN</span>
+                  </td>
+                  <td>Consumption rate expiry</td>
+                  <td>DPD</td>
+                  <td><span class="badge badge-primary">Next-Day Cold</span></td>
+                  <td>3 days before expiry</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Oral Medication — Standard</td>
+                  <td class="font-mono">SHIP-ORAL-STD</td>
+                  <td>
+                    <span class="tag">FIN-*</span>
+                    <span class="tag">SIL-*</span>
+                  </td>
+                  <td>Consumption rate expiry</td>
+                  <td>Royal Mail</td>
+                  <td><span class="badge badge-info">Tracked 48</span></td>
+                  <td>5 days before expiry</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">TRT Injectable — Controlled</td>
+                  <td class="font-mono">SHIP-TRT-INJ-CTRL</td>
+                  <td>
+                    <span class="tag">TST-CYP-*</span>
+                  </td>
+                  <td>Consumption rate expiry</td>
+                  <td>DPD</td>
+                  <td><span class="badge badge-danger">Signed For</span></td>
+                  <td>5 days before expiry</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Topical Solution — Standard</td>
+                  <td class="font-mono">SHIP-TOP-STD</td>
+                  <td>
+                    <span class="tag">MNX-*</span>
+                  </td>
+                  <td>Consumption rate expiry</td>
+                  <td>Royal Mail</td>
+                  <td><span class="badge badge-info">Tracked 48</span></td>
+                  <td>5 days before expiry</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">First Order — Priority</td>
+                  <td class="font-mono">SHIP-FIRST-PRI</td>
+                  <td>
+                    <span class="tag">All first orders</span>
+                  </td>
+                  <td>Clinical approval + payment</td>
+                  <td>DPD</td>
+                  <td><span class="badge badge-primary">Next-Day</span></td>
+                  <td>Immediate</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shipping Schedule Calculation -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Next Ship Date Calculation Logic</h3>
+        </div>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;padding:16px 0;">
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:160px;border:2px solid var(--success);background:var(--success-light);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--success);">Input</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:var(--success);">Last Ship Date</div>
+            </div>
+            <div style="font-size:22px;color:var(--text-muted);padding:0 10px;">+</div>
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:160px;border:2px solid var(--primary);background:var(--primary-light);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--primary);">Clinical</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:var(--primary);">Consumption Rate</div>
+              <div style="font-size:12px;color:var(--primary);">from Clinical Portal</div>
+            </div>
+            <div style="font-size:22px;color:var(--text-muted);padding:0 10px;">&minus;</div>
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:160px;border:2px solid var(--warning);background:var(--warning-light);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--warning);">Buffer</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:var(--warning);">Lead Time</div>
+              <div style="font-size:12px;color:var(--warning);">from Shipping Rule</div>
+            </div>
+            <div style="font-size:22px;color:var(--text-muted);padding:0 10px;">=</div>
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:160px;border:2px solid #6c5ce7;background:#f0edff;">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:#6c5ce7;">Result</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:#6c5ce7;">Next Ship Date</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:8px;">
+            <p style="font-size:13px;color:var(--text-secondary);">
+              <strong>Example:</strong> Patient received Semaglutide on 1 Feb. Consumption rate = 4 weeks. Lead time = 3 days.<br>
+              Next Ship Date = 1 Feb + 28 days - 3 days = <strong>26 Feb</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrier Configuration -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Carrier Configuration</h3>
+          <button class="btn btn-secondary btn-sm">+ Add Carrier</button>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Carrier</th>
+                  <th>Services</th>
+                  <th>Markets</th>
+                  <th>Cold Chain</th>
+                  <th>Signed For</th>
+                  <th>Tracking</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:600;">DPD</td>
+                  <td>
+                    <span class="tag">Next-Day</span>
+                    <span class="tag">Next-Day Cold</span>
+                    <span class="tag">Signed For</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><span class="badge badge-success">Yes</span></td>
+                  <td><span class="badge badge-success">Full</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Config</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Royal Mail</td>
+                  <td>
+                    <span class="tag">Tracked 48</span>
+                    <span class="tag">Tracked 24</span>
+                    <span class="tag">Special Delivery</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-danger">No</span></td>
+                  <td><span class="badge badge-success">Yes (Special)</span></td>
+                  <td><span class="badge badge-success">Full</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Config</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Correios</td>
+                  <td>
+                    <span class="tag">SEDEX</span>
+                    <span class="tag">PAC</span>
+                  </td>
+                  <td>BR</td>
+                  <td><span class="badge badge-danger">No</span></td>
+                  <td><span class="badge badge-danger">No</span></td>
+                  <td><span class="badge badge-info">Partial</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Config</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
