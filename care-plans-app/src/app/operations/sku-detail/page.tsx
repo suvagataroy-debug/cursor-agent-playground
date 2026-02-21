@@ -79,6 +79,19 @@ export default function SkuDetailPage() {
                     <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: i < 4 ? "1px solid #f0f0f0" : "none" }}><span className="text-muted">{l}</span><strong className={l === "Gross Margin" ? "text-success" : ""}>{v}</strong></div>
                   ))}
                 </div>
+                <h4 style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: 0.5, color: "var(--text-secondary)", marginTop: 16, marginBottom: 8 }}>Effective price by offer</h4>
+                <table style={{ fontSize: 13, width: "100%" }}>
+                  <thead><tr><th style={{ textAlign: "left" as const }}>Offer</th><th style={{ textAlign: "right" as const }}>Effective price</th><th style={{ textAlign: "right" as const }}>vs base</th></tr></thead>
+                  <tbody>
+                    {[
+                      { offer: "OFR-WL-SEMA-6M-MTH", effective: "£149.00", vs: "-£16" },
+                      { offer: "OFR-WL-SEMA-12M-FIX", effective: "£199.00", vs: "+£34" },
+                      { offer: "OFR-WL-SEMA-3M-MTH", effective: "£159.00", vs: "-£6" },
+                    ].map((r, i) => (
+                      <tr key={i}><td className="font-mono" style={{ padding: "6px 0" }}>{r.offer}</td><td style={{ textAlign: "right" as const, fontWeight: 600 }}>{r.effective}</td><td style={{ textAlign: "right" as const, color: "var(--text-secondary)" }}>{r.vs}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
             <div className="card mb-4">

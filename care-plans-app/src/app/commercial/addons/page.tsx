@@ -6,14 +6,14 @@ import Link from "next/link";
 export const metadata = { title: "Add-on Configuration — Commercial Portal" };
 
 const addons = [
-  { name: "Vitamin B12 (1000mcg)", sku: "SUP-B12-30", type: "Supplement", typeClass: "badge badge-warning", mode: "Optional", modeClass: "badge-info", offers: ["OFR-WL-SEMA-*", "OFR-WL-TIRZ-*"], price: "£9.99/mo", safety: "Passed", safetyClass: "badge-success", rate: "42%" },
-  { name: "Multivitamin Complex", sku: "SUP-MULTI-30", type: "Supplement", typeClass: "badge badge-warning", mode: "Optional", modeClass: "badge-info", offers: ["All offers"], price: "£7.99/mo", safety: "Passed", safetyClass: "badge-success", rate: "28%" },
-  { name: "Blood Test Kit — Baseline", sku: "SVC-BLOODTEST-BASE", type: "Service", typeClass: "badge badge-primary", mode: "Mandatory", modeClass: "badge-danger", offers: ["OFR-TRT-*"], price: "Included", safety: "Passed", safetyClass: "badge-success", rate: "100%" },
-  { name: "6-Week Blood Test", sku: "SVC-BLOODTEST-6W", type: "Service", typeClass: "badge badge-primary", mode: "Mandatory", modeClass: "badge-danger", offers: ["OFR-TRT-*"], price: "Included", safety: "Passed", safetyClass: "badge-success", rate: "100%" },
-  { name: "Clinician Video Call", sku: "SVC-VIDCALL-15", type: "Service", typeClass: "badge badge-primary", mode: "Optional", modeClass: "badge-info", offers: ["All offers"], price: "£29.00", safety: "Passed", safetyClass: "badge-success", rate: "8%" },
-  { name: "Sharps Bin (1L)", sku: "ACC-SHARPS-1L", type: "Accessory", typeClass: "tag", mode: "Mandatory", modeClass: "badge-danger", offers: ["OFR-WL-SEMA-*", "OFR-TRT-*"], price: "Free", safety: "Passed", safetyClass: "badge-success", rate: "100%" },
-  { name: "Derma Roller (Hair)", sku: "ACC-DERMAROLL-1", type: "Accessory", typeClass: "tag", mode: "Optional", modeClass: "badge-info", offers: ["OFR-HL-*"], price: "£14.99", safety: "Passed", safetyClass: "badge-success", rate: "22%" },
-  { name: "Saw Palmetto Extract", sku: "SUP-SAWPALM-60", type: "Supplement", typeClass: "badge badge-warning", mode: "Optional", modeClass: "badge-info", offers: ["OFR-HL-*"], price: "£11.99/mo", safety: "Blocked by SAF-EXC-003", safetyClass: "badge-danger", rate: "—", blocked: true },
+  { name: "Vitamin B12 (1000mcg)", sku: "SUP-B12-30", addonOfferId: "OFR-ADD-B12-MTH", billingPlans: ["1M-RECURRING", "6M-MONTHLY"], type: "Supplement", typeClass: "badge badge-warning", mode: "Optional", modeClass: "badge-info", offers: ["OFR-WL-SEMA-*", "OFR-WL-TIRZ-*"], price: "£9.99/mo", safety: "Passed", safetyClass: "badge-success", rate: "42%" },
+  { name: "Multivitamin Complex", sku: "SUP-MULTI-30", addonOfferId: "OFR-ADD-MULTI-MTH", billingPlans: ["1M-RECURRING"], type: "Supplement", typeClass: "badge badge-warning", mode: "Optional", modeClass: "badge-info", offers: ["All offers"], price: "£7.99/mo", safety: "Passed", safetyClass: "badge-success", rate: "28%" },
+  { name: "Blood Test Kit — Baseline", sku: "SVC-BLOODTEST-BASE", addonOfferId: "—", billingPlans: ["One-off"], type: "Service", typeClass: "badge badge-primary", mode: "Mandatory", modeClass: "badge-danger", offers: ["OFR-TRT-*"], price: "Included", safety: "Passed", safetyClass: "badge-success", rate: "100%" },
+  { name: "6-Week Blood Test", sku: "SVC-BLOODTEST-6W", addonOfferId: "—", billingPlans: ["One-off"], type: "Service", typeClass: "badge badge-primary", mode: "Mandatory", modeClass: "badge-danger", offers: ["OFR-TRT-*"], price: "Included", safety: "Passed", safetyClass: "badge-success", rate: "100%" },
+  { name: "Clinician Video Call", sku: "SVC-VIDCALL-15", addonOfferId: "OFR-ADD-VIDCALL", billingPlans: ["One-off"], type: "Service", typeClass: "badge badge-primary", mode: "Optional", modeClass: "badge-info", offers: ["All offers"], price: "£29.00", safety: "Passed", safetyClass: "badge-success", rate: "8%" },
+  { name: "Sharps Bin (1L)", sku: "ACC-SHARPS-1L", addonOfferId: "—", billingPlans: ["Included"], type: "Accessory", typeClass: "tag", mode: "Mandatory", modeClass: "badge-danger", offers: ["OFR-WL-SEMA-*", "OFR-TRT-*"], price: "Free", safety: "Passed", safetyClass: "badge-success", rate: "100%" },
+  { name: "Derma Roller (Hair)", sku: "ACC-DERMAROLL-1", addonOfferId: "OFR-ADD-DERMA", billingPlans: ["1M-RECURRING", "6M-MONTHLY"], type: "Accessory", typeClass: "tag", mode: "Optional", modeClass: "badge-info", offers: ["OFR-HL-*"], price: "£14.99", safety: "Passed", safetyClass: "badge-success", rate: "22%" },
+  { name: "Saw Palmetto Extract", sku: "SUP-SAWPALM-60", addonOfferId: "OFR-ADD-SAWPALM-MTH", billingPlans: ["1M-RECURRING"], type: "Supplement", typeClass: "badge badge-warning", mode: "Optional", modeClass: "badge-info", offers: ["OFR-HL-*"], price: "£11.99/mo", safety: "Blocked by SAF-EXC-003", safetyClass: "badge-danger", rate: "—", blocked: true },
 ];
 
 export default function AddonsPage() {
@@ -43,12 +43,14 @@ export default function AddonsPage() {
           <div className="card-body-flush">
             <div className="table-wrapper">
               <table>
-                <thead><tr><th>Add-on Name</th><th>SKU</th><th>Type</th><th>Inclusion Mode</th><th>Linked Offer IDs</th><th>Price</th><th>Safety Check</th><th>Attach Rate</th><th>Actions</th></tr></thead>
+                <thead><tr><th>Add-on Name</th><th>SKU</th><th>Add-on Offer ID</th><th>Billing Plan(s)</th><th>Type</th><th>Inclusion Mode</th><th>Linked Offer IDs</th><th>Price</th><th>Safety Check</th><th>Attach Rate</th><th>Actions</th></tr></thead>
                 <tbody>
                   {addons.map((a, i) => (
                     <tr key={i} style={a.blocked ? { background: "#fef7e0" } : {}}>
                       <td style={{ fontWeight: 600 }}>{a.name}</td>
                       <td className="font-mono">{a.sku}</td>
+                      <td className="font-mono">{a.addonOfferId}</td>
+                      <td>{a.billingPlans.map((bp, j) => <span key={j} className="tag">{bp}</span>)}</td>
                       <td><span className={a.typeClass}>{a.type}</span></td>
                       <td><span className={`badge ${a.modeClass}`}>{a.mode}</span></td>
                       <td>{a.offers.map((o, j) => <span key={j} className="tag">{o}</span>)}</td>
@@ -70,6 +72,10 @@ export default function AddonsPage() {
             <div className="form-row">
               <div className="form-group"><label>Add-on Name</label><input type="text" className="form-control" defaultValue="Vitamin B12 (1000mcg)" /></div>
               <div className="form-group"><label>SKU</label><select className="form-control"><option>SUP-B12-30 — Vitamin B12 1000mcg x30</option><option>SUP-MULTI-30 — Multivitamin x30</option><option>ACC-DERMAROLL-1 — Derma Roller</option></select></div>
+            </div>
+            <div className="form-row">
+              <div className="form-group"><label>Add-on Offer ID</label><input type="text" className="form-control font-mono" placeholder="e.g. OFR-ADD-B12-MTH" defaultValue="OFR-ADD-B12-MTH" /></div>
+              <div className="form-group"><label>Billing plan(s)</label><select className="form-control" multiple style={{ minHeight: 72 }}><option value="1M-RECURRING">1M-RECURRING (Monthly)</option><option value="3M-MONTHLY">3M-MONTHLY</option><option value="6M-MONTHLY">6M-MONTHLY</option><option value="12M-MONTHLY">12M-MONTHLY</option><option value="One-off">One-off</option></select><div className="help-text">Same options as main offers. Select which billing plans this add-on offer supports.</div></div>
             </div>
             <div className="form-group">
               <label>Inclusion Mode</label>

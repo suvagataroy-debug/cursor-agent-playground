@@ -1,7 +1,6 @@
 import PortalLayout from "@/components/PortalLayout";
 import Topbar from "@/components/Topbar";
 import { commercialSidebar } from "@/components/sidebars";
-import Link from "next/link";
 
 export const metadata = { title: "Offer Builder — Commercial Portal" };
 
@@ -54,19 +53,19 @@ export default function OfferDetailPage() {
               <div className="card-header"><h3>Billing Plan</h3></div>
               <div className="card-body">
                 <div className="form-row">
-                  <div className="form-group"><label>Billing Plan</label>
-                    <select className="form-control" defaultValue="6M-MONTHLY">
-                      <option value="1M-RECURRING">1M-RECURRING (Monthly, no commitment)</option>
-                      <option value="3M-MONTHLY">3M-MONTHLY (3-month, paid monthly)</option>
-                      <option value="6M-MONTHLY">6M-MONTHLY (6-month, paid monthly)</option>
-                      <option value="12M-MONTHLY">12M-MONTHLY (12-month, paid monthly)</option>
-                    </select>
-                  </div>
-                  <div className="form-group"><label>Payment Frequency</label><select className="form-control"><option>Every 4 weeks</option><option>Monthly (calendar)</option><option>One-off</option></select></div>
+                  <div className="form-group"><label>Duration</label><div style={{ display: "flex", gap: 8, alignItems: "center" }}><input type="number" className="form-control" defaultValue={6} style={{ width: 80 }} /><select className="form-control" style={{ width: 100 }}><option>months</option><option>weeks</option></select></div></div>
+                  <div className="form-group"><label>Payment type</label><select className="form-control"><option>Recurring</option><option>One-off (upfront)</option></select></div>
+                  <div className="form-group"><label>Billing cycle</label><select className="form-control"><option>Every 4 weeks</option><option>Monthly (calendar)</option><option>Every 12 weeks</option><option>Single payment</option></select></div>
                 </div>
                 <div className="form-row">
-                  <div className="form-group"><label>Commitment Length</label><div style={{ display: "flex", gap: 8, alignItems: "center" }}><input type="number" className="form-control" defaultValue={6} style={{ width: 80 }} /><span>months</span></div></div>
                   <div className="form-group"><label>Auto-Renew</label><div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}><label className="form-switch"><input type="checkbox" defaultChecked /><span className="slider" /></label><span style={{ fontSize: 13 }}>Auto-renew after commitment ends</span></div></div>
+                </div>
+                <div className="form-group" style={{ marginTop: 12 }}>
+                  <label>Early cancellation charges (optional)</label>
+                  <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4 }}>
+                    <input type="text" className="form-control" placeholder="e.g. £50 or remaining months" style={{ maxWidth: 200 }} />
+                  </div>
+                  <div className="help-text">Fixed fee or remaining commitment (e.g. 2 months). Leave blank for no early cancellation charge.</div>
                 </div>
               </div>
             </div>
@@ -107,7 +106,7 @@ export default function OfferDetailPage() {
             </div>
 
             <div className="card">
-              <div className="card-header"><h3>Included Items &amp; Add-ons</h3><Link href="/commercial/addons" className="btn btn-secondary btn-sm">+ Add Item</Link></div>
+              <div className="card-header"><h3>Included Items</h3></div>
               <div className="card-body-flush">
                 <table>
                   <thead><tr><th>Item</th><th>SKU</th><th>Type</th><th>Frequency</th><th>Included in Price</th><th>Actions</th></tr></thead>
@@ -117,9 +116,8 @@ export default function OfferDetailPage() {
                       { item: "Alcohol Swabs (x10)", sku: "ACC-SWABS-10", type: "Accessory", typeClass: "tag", freq: "Every shipment", included: true },
                       { item: "Sharps Bin", sku: "ACC-SHARPS-1L", type: "Accessory", typeClass: "tag", freq: "First order only", included: true },
                       { item: "Needles (x4)", sku: "ACC-NEEDLES-4", type: "Accessory", typeClass: "tag", freq: "Every shipment", included: true },
-                      { item: "Vitamin B12 Supplement", sku: "SUP-B12-30", type: "Add-on", typeClass: "badge badge-warning", freq: "Every shipment", included: false, price: "+£9.99" },
                     ].map((itm, i) => (
-                      <tr key={i}><td style={{ fontWeight: 500 }}>{itm.item}</td><td className="font-mono">{itm.sku}</td><td><span className={itm.typeClass}>{itm.type}</span></td><td>{itm.freq}</td><td>{itm.included ? <span className="badge badge-success">Yes</span> : <span className="badge badge-info">Optional {itm.price}</span>}</td><td><button className="btn btn-ghost btn-sm">Remove</button></td></tr>
+                      <tr key={i}><td style={{ fontWeight: 500 }}>{itm.item}</td><td className="font-mono">{itm.sku}</td><td><span className={itm.typeClass}>{itm.type}</span></td><td>{itm.freq}</td><td>{itm.included ? <span className="badge badge-success">Yes</span> : <span className="badge badge-info">Optional</span>}</td><td><button className="btn btn-ghost btn-sm">Remove</button></td></tr>
                     ))}
                   </tbody>
                 </table>
@@ -132,9 +130,33 @@ export default function OfferDetailPage() {
               <div className="card-header"><h3>Offer Summary</h3></div>
               <div className="card-body">
                 <div style={{ fontSize: 13 }}>
-                  {[["Category", <span key="c" className="badge badge-primary">Weight Loss</span>], ["Treatment", <strong key="t">Semaglutide</strong>], ["Commitment", <strong key="co">6 months</strong>], ["Payment", <strong key="p">Every 4 weeks</strong>], ["Pricing", <span key="pr" className="badge badge-primary">Dynamic</span>], ["Price Range", <strong key="r">£149 – £299/mo</strong>], ["Included Items", <strong key="i">4 + 1 optional</strong>]].map(([label, val], i) => (
+                  {[["Category", <span key="c" className="badge badge-primary">Weight Loss</span>], ["Treatment", <strong key="t">Semaglutide</strong>], ["Commitment", <strong key="co">6 months</strong>], ["Payment", <strong key="p">Every 4 weeks</strong>], ["Pricing", <span key="pr" className="badge badge-primary">Dynamic</span>], ["Price Range", <strong key="r">£149 – £299/mo</strong>], ["Included Items", <strong key="i">4</strong>]].map(([label, val], i) => (
                     <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: i < 6 ? "1px solid #f0f0f0" : "none" }}><span className="text-muted">{label}</span>{val}</div>
                   ))}
+                </div>
+              </div>
+            </div>
+            <div className="card mb-4">
+              <div className="card-header"><h3>Shipment Manifest Preview</h3></div>
+              <div className="card-body">
+                <div className="help-text" style={{ marginBottom: 12 }}>Preview manifest by treatment plan (linked above). Add-ons are customer choice and not shown here.</div>
+                <div className="form-row-3 mb-3">
+                  <div className="form-group"><label>Treatment Plan</label><select className="form-control"><option>CTP-WL-SEMA-STD — Semaglutide Standard</option><option>CTP-TRT-CYP-STD — TRT Cypionate</option></select></div>
+                  <div className="form-group"><label>Titration Step</label><select className="form-control" defaultValue="3"><option value="1">Step 1 — 0.25mg</option><option value="3">Step 3 — 1.0mg</option><option value="5">Step 5 — 2.4mg</option></select></div>
+                  <div className="form-group"><label>Order Type</label><select className="form-control" defaultValue="Refill"><option>First Order</option><option value="Refill">Refill</option></select></div>
+                </div>
+                <button className="btn btn-primary btn-sm" style={{ marginBottom: 16 }}>Generate Manifest</button>
+                <div style={{ background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 8, padding: 20 }}>
+                  <h4 style={{ fontSize: 13, fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: 0.5, color: "var(--text-secondary)", marginBottom: 12 }}>Manifest — Refill Order (Step 3)</h4>
+                  <table>
+                    <thead><tr><th>#</th><th>Item</th><th>SKU</th><th>Qty</th><th>Source</th></tr></thead>
+                    <tbody>
+                      <tr><td>1</td><td style={{ fontWeight: 600 }}>Semaglutide 1.0mg Pen</td><td className="font-mono">SEMA-100-PEN</td><td>1</td><td><span className="badge badge-primary">Treatment Plan</span></td></tr>
+                      <tr><td>2</td><td>Injection Needles (x4)</td><td className="font-mono">ACC-NEEDLES-4</td><td>1 pack</td><td><span className="tag">Rule: RULE-INJ-REFILL</span></td></tr>
+                      <tr><td>3</td><td>Alcohol Swabs (x10)</td><td className="font-mono">ACC-SWABS-10</td><td>1 pack</td><td><span className="tag">Rule: RULE-INJ-REFILL</span></td></tr>
+                    </tbody>
+                  </table>
+                  <div style={{ marginTop: 12, fontSize: 13, color: "var(--text-secondary)" }}><strong>Shipping:</strong> DPD Next-Day Cold &middot; <strong>Est. Weight:</strong> 95g &middot; <strong>Storage:</strong> Cold chain (2-8&deg;C)</div>
                 </div>
               </div>
             </div>

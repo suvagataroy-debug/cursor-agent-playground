@@ -9,8 +9,6 @@ const rules = [
   { name: "IF Injectable + Refill", code: "RULE-INJ-REFILL", condition: "Order = Refill & Med = Injectable", condClass: "badge-info", skus: ["SEMA-*-PEN"], then: ["Needles x4", "Swabs x10"] },
   { name: "IF TRT + First Order", code: "RULE-TRT-FIRST", condition: "Order = First & Category = TRT", condClass: "badge-warning", skus: ["TST-CYP-*"], then: ["Sharps Bin", "Needles x8", "Swabs x20", "Bacteriostatic Water", "Multi-use Vial"] },
   { name: "IF TRT + Refill", code: "RULE-TRT-REFILL", condition: "Order = Refill & Category = TRT", condClass: "badge-info", skus: ["TST-CYP-*"], then: ["Needles x8", "Swabs x20"] },
-  { name: "IF Oral Medication (any)", code: "RULE-ORAL-STD", condition: "Med = Oral tablet/capsule", condClass: "badge-info", skus: ["FIN-*", "SIL-*"], then: ["Medication only — no accessories"] },
-  { name: "IF Hair Combo Plan", code: "RULE-HAIR-CMB", condition: "Protocol = CTP-HL-FINMNX-CMB", condClass: "badge-info", skus: ["FIN-1MG-90", "MNX-5PCT-60ML"], then: ["Finasteride 90 tabs", "Minoxidil x3 bottles"] },
 ];
 
 export default function LogisticsRulesPage() {
