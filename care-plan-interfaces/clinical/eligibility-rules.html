@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatment Eligibility — Medical Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon clinical">M</div>
+      <div>
+        <h2>Medical Portal</h2>
+        <span>Clinical &amp; Eligibility Domain</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Eligibility</div>
+      <ul class="sidebar-nav">
+        <li><a href="eligibility-rules.html" class="active"><span class="nav-icon">&#x2714;</span> Treatment Eligibility <span class="badge">12</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Protocols</div>
+      <ul class="sidebar-nav">
+        <li><a href="treatment-plans.html"><span class="nav-icon">&#x1F489;</span> Titration Protocols</a></li>
+        <li><a href="consumption-rates.html"><span class="nav-icon">&#x23F1;</span> Consumption Rates</a></li>
+        <li><a href="safety-boundaries.html"><span class="nav-icon">&#x1F6E1;</span> Safety Boundaries</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="eligibility-rules.html">Medical Portal</a>
+        <span>/</span>
+        <strong>Treatment Eligibility</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Export Rules</button>
+        <button class="btn btn-primary btn-sm">+ New Rule Set</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Treatment Eligibility</h1>
+          <p>Define mandatory patient data points (e.g., BMI, age, lab results) required to qualify for specific treatment categories. The Eligibility Engine evaluates real-time patient data against these rules.</p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-label">Active Rule Sets</div>
+          <div class="stat-value">12</div>
+          <div class="stat-change up">+2 this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Categories Covered</div>
+          <div class="stat-value">5</div>
+          <div class="stat-change">Hair, Weight, Skin, ED, TRT</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Patients Evaluated (30d)</div>
+          <div class="stat-value">14,832</div>
+          <div class="stat-change up">+18% vs prev period</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Avg. Pass Rate</div>
+          <div class="stat-value">72%</div>
+          <div class="stat-change down">-3% vs prev period</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search-input">
+          <input type="text" placeholder="Search rules by name, category, or condition...">
+        </div>
+        <select class="form-control" style="width:160px;">
+          <option>All Categories</option>
+          <option>Weight Loss</option>
+          <option>Hair</option>
+          <option>Skin</option>
+          <option>ED</option>
+          <option>TRT</option>
+        </select>
+        <select class="form-control" style="width:130px;">
+          <option>All Statuses</option>
+          <option>Active</option>
+          <option>Draft</option>
+          <option>Archived</option>
+        </select>
+      </div>
+
+      <!-- Rules Table -->
+      <div class="card">
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rule Set Name</th>
+                  <th>Category</th>
+                  <th>Conditions</th>
+                  <th>Market</th>
+                  <th>Status</th>
+                  <th>Pass Rate</th>
+                  <th>Last Modified</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Weight Loss — GLP-1 Entry</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-WL-GLP1-001</div>
+                  </td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td>
+                    <span class="tag">BMI ≥ 30</span>
+                    <span class="tag">Age 18-75</span>
+                    <span class="tag">No T2D</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>68%</td>
+                  <td>14 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Weight Loss — Orlistat Entry</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-WL-ORL-001</div>
+                  </td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td>
+                    <span class="tag">BMI ≥ 28</span>
+                    <span class="tag">Age 18-65</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>81%</td>
+                  <td>10 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Hair Loss — Finasteride Entry</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-HL-FIN-001</div>
+                  </td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td>
+                    <span class="tag">Male</span>
+                    <span class="tag">Age 18+</span>
+                    <span class="tag">No Liver Disease</span>
+                  </td>
+                  <td>UK, BR</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>88%</td>
+                  <td>12 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Hair Loss — Minoxidil Topical</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-HL-MNX-001</div>
+                  </td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td>
+                    <span class="tag">Age 18+</span>
+                    <span class="tag">No Scalp Conditions</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>92%</td>
+                  <td>8 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">ED — Sildenafil Entry</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-ED-SIL-001</div>
+                  </td>
+                  <td><span class="badge badge-warning">ED</span></td>
+                  <td>
+                    <span class="tag">Male</span>
+                    <span class="tag">Age 18+</span>
+                    <span class="tag">No Nitrates</span>
+                    <span class="tag">BP &lt; 170/100</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>75%</td>
+                  <td>5 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">TRT — Testosterone Entry</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-TRT-TST-001</div>
+                  </td>
+                  <td><span class="badge badge-danger">TRT</span></td>
+                  <td>
+                    <span class="tag">Male</span>
+                    <span class="tag">Age 18+</span>
+                    <span class="tag">Testosterone &lt; 12 nmol/L</span>
+                    <span class="tag">Blood Test Required</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td>52%</td>
+                  <td>3 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Weight Loss — Tirzepatide Entry</div>
+                    <div class="text-muted" style="font-size:12px;">ELIG-WL-TZP-001</div>
+                  </td>
+                  <td><span class="badge badge-primary">Weight Loss</span></td>
+                  <td>
+                    <span class="tag">BMI ≥ 30</span>
+                    <span class="tag">Age 18-75</span>
+                    <span class="tag">No Pancreatitis</span>
+                  </td>
+                  <td>UK</td>
+                  <td><span class="badge badge-warning"><span class="status-dot draft"></span>Draft</span></td>
+                  <td>—</td>
+                  <td>18 Feb 2026</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                    <button class="btn btn-ghost btn-sm">Clone</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rule Builder Preview -->
+      <div class="mt-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Rule Builder Preview — Weight Loss GLP-1 Entry</h3>
+            <button class="btn btn-secondary btn-sm">Edit Rule</button>
+          </div>
+          <div class="card-body">
+            <div class="detail-layout-equal">
+              <div>
+                <h4 style="font-size:13px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);">Entry Conditions (ALL must pass)</h4>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Data Point</th>
+                      <th>Operator</th>
+                      <th>Value</th>
+                      <th>Source</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:500;">BMI</td>
+                      <td><span class="tag">≥</span></td>
+                      <td>30.0</td>
+                      <td class="text-muted">Questionnaire</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Age</td>
+                      <td><span class="tag">between</span></td>
+                      <td>18 — 75</td>
+                      <td class="text-muted">Profile</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Type 2 Diabetes</td>
+                      <td><span class="tag">is not</span></td>
+                      <td>true</td>
+                      <td class="text-muted">Questionnaire</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Pregnancy Status</td>
+                      <td><span class="tag">is not</span></td>
+                      <td>pregnant / planning</td>
+                      <td class="text-muted">Questionnaire</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Location</td>
+                      <td><span class="tag">in</span></td>
+                      <td>England, Wales, Scotland</td>
+                      <td class="text-muted">Address</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <h4 style="font-size:13px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);">Exclusion Conditions (ANY triggers rejection)</h4>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Data Point</th>
+                      <th>Operator</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:500;">Eating Disorder History</td>
+                      <td><span class="tag">is</span></td>
+                      <td>true</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Pancreatitis History</td>
+                      <td><span class="tag">is</span></td>
+                      <td>true</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Medullary Thyroid Cancer</td>
+                      <td><span class="tag">is</span></td>
+                      <td>true</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:500;">Current GLP-1 Rx</td>
+                      <td><span class="tag">is</span></td>
+                      <td>true</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

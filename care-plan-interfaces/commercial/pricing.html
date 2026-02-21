@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Engine — Commercial Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon commercial">$</div>
+      <div>
+        <h2>Commercial Portal</h2>
+        <span>Offer, Pricing &amp; Promotion</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Offers</div>
+      <ul class="sidebar-nav">
+        <li><a href="offers.html"><span class="nav-icon">&#127873;</span> Offer Builder</a></li>
+        <li><a href="addons.html"><span class="nav-icon">&#x2795;</span> Add-on Configuration</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Billing</div>
+      <ul class="sidebar-nav">
+        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Plan Lengths</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Pricing &amp; Promotions</div>
+      <ul class="sidebar-nav">
+        <li><a href="pricing.html" class="active"><span class="nav-icon">&#128178;</span> Pricing Strategies</a></li>
+        <li><a href="promotions.html"><span class="nav-icon">&#127941;</span> Promotion Manager</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="offers.html">Commercial Portal</a>
+        <span>/</span>
+        <strong>Pricing Engine</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Price Simulator</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Pricing Strategies</h1>
+          <p>Configure offer-level pricing, including "All-In" fixed fees or "Dynamic" prices based on the sum of underlying SKUs. The Pricing Engine calculates the final price by combining SKU base prices, Offer-level overrides, and Promotion inputs.</p>
+        </div>
+      </div>
+
+      <!-- Pricing Calculation Flow -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Price Calculation Logic</h3>
+        </div>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;padding:16px 0;">
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:140px;border:2px solid var(--border);background:var(--bg);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--text-secondary);">Input 1</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;">SKU Base Price</div>
+              <div style="font-size:12px;color:var(--text-muted);">from Catalog</div>
+            </div>
+            <div style="font-size:22px;color:var(--text-muted);padding:0 10px;">&rarr;</div>
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:140px;border:2px solid var(--primary);background:var(--primary-light);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--primary);">Override</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:var(--primary);">Offer Price</div>
+              <div style="font-size:12px;color:var(--primary);">from Offer Engine</div>
+            </div>
+            <div style="font-size:22px;color:var(--text-muted);padding:0 10px;">&minus;</div>
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:140px;border:2px solid var(--warning);background:var(--warning-light);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--warning);">Discount</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:var(--warning);">Promotion</div>
+              <div style="font-size:12px;color:var(--warning);">from Promo Engine</div>
+            </div>
+            <div style="font-size:22px;color:var(--text-muted);padding:0 10px;">=</div>
+            <div style="padding:14px 20px;border-radius:8px;text-align:center;min-width:140px;border:2px solid var(--success);background:var(--success-light);">
+              <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;color:var(--success);">Result</div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px;color:var(--success);">Final Price</div>
+              <div style="font-size:12px;color:var(--success);">charged to patient</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price Simulator -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Price Simulator</h3>
+          <span class="text-muted" style="font-size:12px;">Test how pricing resolves for a specific scenario</span>
+        </div>
+        <div class="card-body">
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Select Offer</label>
+              <select class="form-control">
+                <option>OFR-WL-SEMA-6M-MTH — Semaglutide 6M Monthly</option>
+                <option>OFR-WL-SEMA-12M-FIX — Semaglutide 12M All-In</option>
+                <option>OFR-HL-FIN-1M-SUB — Finasteride Monthly</option>
+                <option>OFR-TRT-CYP-HCG-SUB — TRT Membership</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Current Titration Step</label>
+              <select class="form-control">
+                <option>Step 1 — 0.25mg</option>
+                <option>Step 2 — 0.5mg</option>
+                <option selected>Step 3 — 1.0mg</option>
+                <option>Step 4 — 1.7mg</option>
+                <option>Step 5 — 2.4mg (maintenance)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Promo Code (optional)</label>
+              <input type="text" class="form-control font-mono" value="WELCOME50">
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" style="margin-bottom:16px;">Calculate Price</button>
+
+          <!-- Simulation Result -->
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:20px;">
+            <h4 style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);margin-bottom:12px;">Simulation Result</h4>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="text-muted" style="width:200px;">Offer</td>
+                  <td style="font-weight:500;">Semaglutide — 6M Monthly Plan</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">Titration Step</td>
+                  <td>Step 3 — 1.0mg (SEMA-100-PEN)</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">SKU Base Price</td>
+                  <td>&pound;245.00</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">Offer Override Price</td>
+                  <td>&pound;229.00 <span class="text-success" style="font-size:12px;">(-&pound;16.00)</span></td>
+                </tr>
+                <tr>
+                  <td class="text-muted">Promotion (WELCOME50)</td>
+                  <td>-50% on first payment = <span class="text-danger">-&pound;114.50</span></td>
+                </tr>
+                <tr style="background:#e6f4ea;">
+                  <td style="font-weight:700;">Final Price (1st payment)</td>
+                  <td style="font-weight:700;font-size:18px;color:var(--success);">&pound;114.50</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">Subsequent Payments</td>
+                  <td style="font-weight:500;">&pound;229.00/month (at current dose)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKU Base Prices -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>SKU Base Prices</h3>
+          <span class="text-muted" style="font-size:12px;">Managed in Supply Chain Portal — shown here for reference</span>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Medication</th>
+                  <th>Dose</th>
+                  <th>Category</th>
+                  <th>Base Price</th>
+                  <th>Cost</th>
+                  <th>Margin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-mono">SEMA-025-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>0.25mg</td>
+                  <td><span class="badge badge-primary">WL</span></td>
+                  <td>&pound;165.00</td>
+                  <td class="text-muted">&pound;62.00</td>
+                  <td class="text-success">62%</td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-050-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>0.5mg</td>
+                  <td><span class="badge badge-primary">WL</span></td>
+                  <td>&pound;195.00</td>
+                  <td class="text-muted">&pound;78.00</td>
+                  <td class="text-success">60%</td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-100-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>1.0mg</td>
+                  <td><span class="badge badge-primary">WL</span></td>
+                  <td>&pound;245.00</td>
+                  <td class="text-muted">&pound;105.00</td>
+                  <td class="text-success">57%</td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-170-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>1.7mg</td>
+                  <td><span class="badge badge-primary">WL</span></td>
+                  <td>&pound;275.00</td>
+                  <td class="text-muted">&pound;128.00</td>
+                  <td class="text-success">53%</td>
+                </tr>
+                <tr>
+                  <td class="font-mono">SEMA-240-PEN</td>
+                  <td>Semaglutide</td>
+                  <td>2.4mg</td>
+                  <td><span class="badge badge-primary">WL</span></td>
+                  <td>&pound;320.00</td>
+                  <td class="text-muted">&pound;155.00</td>
+                  <td class="text-success">52%</td>
+                </tr>
+                <tr>
+                  <td class="font-mono">FIN-1MG-30</td>
+                  <td>Finasteride</td>
+                  <td>1mg x30</td>
+                  <td><span class="badge badge-info">Hair</span></td>
+                  <td>&pound;48.00</td>
+                  <td class="text-muted">&pound;4.50</td>
+                  <td class="text-success">91%</td>
+                </tr>
+                <tr>
+                  <td class="font-mono">TST-CYP-10ML</td>
+                  <td>Test. Cypionate</td>
+                  <td>200mg/ml</td>
+                  <td><span class="badge badge-danger">TRT</span></td>
+                  <td>&pound;95.00</td>
+                  <td class="text-muted">&pound;32.00</td>
+                  <td class="text-success">66%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offer Override Summary -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Offer-Level Price Overrides</h3>
+          <span class="text-muted" style="font-size:12px;">Overrides set in Offer Engine — aggregated view</span>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Offer</th>
+                  <th>Pricing Model</th>
+                  <th>Override Type</th>
+                  <th>Price / Range</th>
+                  <th>vs Base Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:500;">Semaglutide 6M Monthly</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>Per-SKU override</td>
+                  <td>&pound;149 – &pound;299/mo</td>
+                  <td class="text-success">-3% to -10%</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">Semaglutide 12M All-In</td>
+                  <td><span class="badge badge-info">All-In</span></td>
+                  <td>Fixed fee</td>
+                  <td>&pound;199/mo flat</td>
+                  <td class="text-muted">varies by step</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">Finasteride Monthly</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>Per-SKU override</td>
+                  <td>&pound;44/mo</td>
+                  <td class="text-success">-8%</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">TRT Membership</td>
+                  <td><span class="badge badge-info">All-In</span></td>
+                  <td>Fixed fee</td>
+                  <td>&pound;159/mo flat</td>
+                  <td class="text-muted">all-inclusive</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

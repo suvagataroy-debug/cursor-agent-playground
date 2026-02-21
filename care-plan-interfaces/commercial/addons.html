@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add-on Configuration — Commercial Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon commercial">$</div>
+      <div>
+        <h2>Commercial Portal</h2>
+        <span>Offer, Pricing &amp; Promotion</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Offers</div>
+      <ul class="sidebar-nav">
+        <li><a href="offers.html"><span class="nav-icon">&#127873;</span> Offer Builder</a></li>
+        <li><a href="addons.html" class="active"><span class="nav-icon">&#x2795;</span> Add-on Configuration</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Billing</div>
+      <ul class="sidebar-nav">
+        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Plan Lengths</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Pricing &amp; Promotions</div>
+      <ul class="sidebar-nav">
+        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Strategies</a></li>
+        <li><a href="promotions.html"><span class="nav-icon">&#127941;</span> Promotion Manager</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="offers.html">Commercial Portal</a>
+        <span>/</span>
+        <strong>Add-on Configuration</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Add-on</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Add-on Configuration</h1>
+          <p>Tag supplementary items (vitamins, accessories, services) as mandatory or optional additions to commercial offers. Add-ons are subject to Safety Boundary rules from the Medical Portal.</p>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div style="background:var(--primary-light);border:1px solid #c5d9f7;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:18px;">&#9432;</span>
+        <div style="font-size:13px;line-height:1.6;">
+          <strong>Safety-Aware:</strong> Add-ons configured here are validated against the <a href="../clinical/safety-boundaries.html">Medical Portal's Safety Boundaries</a> before being shown to patients. If an exclusion rule blocks a supplement with a medication, that add-on will be automatically hidden from the offer — regardless of the configuration here.
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-label">Total Add-ons</div>
+          <div class="stat-value">12</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Mandatory</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Optional</div>
+          <div class="stat-value">9</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Add-on Attach Rate</div>
+          <div class="stat-value">34%</div>
+          <div class="stat-change up">+5% this month</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active">All Add-ons</button>
+        <button class="tab">Mandatory</button>
+        <button class="tab">Optional</button>
+        <button class="tab">By Category</button>
+      </div>
+
+      <!-- Add-ons Table -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Add-on Items</h3>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Add-on Name</th>
+                  <th>SKU</th>
+                  <th>Type</th>
+                  <th>Inclusion Mode</th>
+                  <th>Linked Offer IDs</th>
+                  <th>Price</th>
+                  <th>Safety Check</th>
+                  <th>Attach Rate</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:600;">Vitamin B12 (1000mcg)</td>
+                  <td class="font-mono">SUP-B12-30</td>
+                  <td><span class="badge badge-warning">Supplement</span></td>
+                  <td><span class="badge badge-info">Optional</span></td>
+                  <td>
+                    <span class="tag">OFR-WL-SEMA-*</span>
+                    <span class="tag">OFR-WL-TIRZ-*</span>
+                  </td>
+                  <td>&pound;9.99/mo</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>42%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Multivitamin Complex</td>
+                  <td class="font-mono">SUP-MULTI-30</td>
+                  <td><span class="badge badge-warning">Supplement</span></td>
+                  <td><span class="badge badge-info">Optional</span></td>
+                  <td>
+                    <span class="tag">All offers</span>
+                  </td>
+                  <td>&pound;7.99/mo</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>28%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Omega-3 Fish Oil</td>
+                  <td class="font-mono">SUP-OMEGA3-60</td>
+                  <td><span class="badge badge-warning">Supplement</span></td>
+                  <td><span class="badge badge-info">Optional</span></td>
+                  <td>
+                    <span class="tag">All offers</span>
+                  </td>
+                  <td>&pound;12.99/mo</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>18%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Blood Test Kit — Baseline</td>
+                  <td class="font-mono">SVC-BLOODTEST-BASE</td>
+                  <td><span class="badge badge-primary">Service</span></td>
+                  <td><span class="badge badge-danger">Mandatory</span></td>
+                  <td>
+                    <span class="tag">OFR-TRT-*</span>
+                  </td>
+                  <td>Included</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>100%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">6-Week Blood Test</td>
+                  <td class="font-mono">SVC-BLOODTEST-6W</td>
+                  <td><span class="badge badge-primary">Service</span></td>
+                  <td><span class="badge badge-danger">Mandatory</span></td>
+                  <td>
+                    <span class="tag">OFR-TRT-*</span>
+                  </td>
+                  <td>Included</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>100%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Clinician Video Call</td>
+                  <td class="font-mono">SVC-VIDCALL-15</td>
+                  <td><span class="badge badge-primary">Service</span></td>
+                  <td><span class="badge badge-info">Optional</span></td>
+                  <td>
+                    <span class="tag">All offers</span>
+                  </td>
+                  <td>&pound;29.00</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>8%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Sharps Bin (1L)</td>
+                  <td class="font-mono">ACC-SHARPS-1L</td>
+                  <td><span class="tag">Accessory</span></td>
+                  <td><span class="badge badge-danger">Mandatory</span></td>
+                  <td>
+                    <span class="tag">OFR-WL-SEMA-*</span>
+                    <span class="tag">OFR-TRT-*</span>
+                  </td>
+                  <td>Free</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>100%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Derma Roller (Hair)</td>
+                  <td class="font-mono">ACC-DERMAROLL-1</td>
+                  <td><span class="tag">Accessory</span></td>
+                  <td><span class="badge badge-info">Optional</span></td>
+                  <td>
+                    <span class="tag">OFR-HL-*</span>
+                  </td>
+                  <td>&pound;14.99</td>
+                  <td><span class="badge badge-success">Passed</span></td>
+                  <td>22%</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr style="background:#fef7e0;">
+                  <td style="font-weight:600;">Saw Palmetto Extract</td>
+                  <td class="font-mono">SUP-SAWPALM-60</td>
+                  <td><span class="badge badge-warning">Supplement</span></td>
+                  <td><span class="badge badge-info">Optional</span></td>
+                  <td>
+                    <span class="tag">OFR-HL-*</span>
+                  </td>
+                  <td>&pound;11.99/mo</td>
+                  <td><span class="badge badge-danger">Blocked by SAF-EXC-003</span></td>
+                  <td>—</td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add-on Editor Form -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Configure Add-on</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Add-on Name</label>
+              <input type="text" class="form-control" value="Vitamin B12 (1000mcg)">
+            </div>
+            <div class="form-group">
+              <label>SKU</label>
+              <select class="form-control">
+                <option selected>SUP-B12-30 — Vitamin B12 1000mcg x30</option>
+                <option>SUP-MULTI-30 — Multivitamin x30</option>
+                <option>SUP-OMEGA3-60 — Omega-3 x60</option>
+                <option>SVC-BLOODTEST-BASE — Blood Test Kit</option>
+                <option>ACC-DERMAROLL-1 — Derma Roller</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Inclusion Mode</label>
+              <div style="display:flex;gap:16px;margin-top:4px;">
+                <label style="display:flex;align-items:flex-start;gap:10px;padding:14px;border:2px solid var(--border);border-radius:8px;cursor:pointer;flex:1;">
+                  <input type="radio" name="inclusion" style="margin-top:2px;">
+                  <div>
+                    <div style="font-weight:600;">Mandatory</div>
+                    <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">Always included, patient cannot remove</div>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:flex-start;gap:10px;padding:14px;border:2px solid var(--primary);border-radius:8px;cursor:pointer;flex:1;background:var(--primary-light);">
+                  <input type="radio" name="inclusion" checked style="margin-top:2px;">
+                  <div>
+                    <div style="font-weight:600;">Optional</div>
+                    <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">Patient can add/remove during checkout</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Price Impact</label>
+              <select class="form-control">
+                <option>Free — included in offer price</option>
+                <option selected>Additional charge per cycle</option>
+                <option>One-time charge (first order)</option>
+              </select>
+              <div class="mt-2">
+                <label>Add-on Price</label>
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <span>&pound;</span>
+                  <input type="text" class="form-control" value="9.99" style="width:100px;">
+                  <span class="text-muted">per billing cycle</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Link to Offer IDs</label>
+            <select class="form-control" multiple style="min-height:100px;">
+              <option selected>OFR-WL-SEMA-6M-MTH — Semaglutide 6M Monthly</option>
+              <option selected>OFR-WL-SEMA-12M-FIX — Semaglutide 12M All-In</option>
+              <option selected>OFR-WL-SEMA-3M-MTH — Semaglutide 3M Starter</option>
+              <option>OFR-HL-FIN-1M-SUB — Finasteride Monthly</option>
+              <option>OFR-TRT-CYP-HCG-SUB — TRT Membership</option>
+              <option>OFR-ED-SIL-1M-PRN — Sildenafil Monthly</option>
+            </select>
+            <div class="help-text">Select which Offer IDs this add-on is available for. Add-ons are linked to specific Offer IDs, not individual items.</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Frequency</label>
+              <select class="form-control">
+                <option selected>Every shipment</option>
+                <option>First order only</option>
+                <option>Every Nth shipment</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Pre-selected by Default</label>
+              <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+                <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                <span style="font-size:13px;">Show as pre-selected (opt-out) during checkout</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px;">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Save Add-on</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

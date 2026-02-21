@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offer Builder — Commercial Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon commercial">$</div>
+      <div>
+        <h2>Commercial Portal</h2>
+        <span>Offer, Pricing &amp; Promotion</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Offers</div>
+      <ul class="sidebar-nav">
+        <li><a href="offers.html" class="active"><span class="nav-icon">&#127873;</span> Offer Builder</a></li>
+        <li><a href="addons.html"><span class="nav-icon">&#x2795;</span> Add-on Configuration</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Billing</div>
+      <ul class="sidebar-nav">
+        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Plan Lengths</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Pricing &amp; Promotions</div>
+      <ul class="sidebar-nav">
+        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Strategies</a></li>
+        <li><a href="promotions.html"><span class="nav-icon">&#127941;</span> Promotion Manager</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="offers.html">Offer Builder</a>
+        <span>/</span>
+        <strong>Semaglutide — 6M Monthly</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Preview</button>
+        <button class="btn btn-secondary btn-sm">Duplicate</button>
+        <button class="btn btn-primary btn-sm">Save &amp; Publish</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Offer Builder</h1>
+          <p>Configure a commercial offer by linking a clinical treatment plan to a billing plan, setting pricing model, and defining included items.</p>
+        </div>
+        <span class="badge badge-success" style="font-size:13px;padding:6px 14px;"><span class="status-dot active"></span>Live</span>
+      </div>
+
+      <div class="detail-layout">
+        <div>
+          <!-- Core Offer Config -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Offer Configuration</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Offer Name</label>
+                  <input type="text" class="form-control" value="Semaglutide — 6M Monthly Plan">
+                </div>
+                <div class="form-group">
+                  <label>Offer Code</label>
+                  <input type="text" class="form-control font-mono" value="OFR-WL-SEMA-6M-MTH">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Category</label>
+                  <select class="form-control">
+                    <option selected>Weight Loss</option>
+                    <option>Hair</option>
+                    <option>ED</option>
+                    <option>TRT</option>
+                    <option>Skin</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Channel</label>
+                  <select class="form-control">
+                    <option selected>JoinVoy</option>
+                    <option>Manual.co</option>
+                    <option>NHS Partnership</option>
+                    <option>Whitelabel</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" rows="2">Pay monthly for your Semaglutide treatment. 6-month minimum commitment with dynamic pricing based on your current titration dose.</textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Status</label>
+                  <select class="form-control">
+                    <option selected>Live</option>
+                    <option>Draft</option>
+                    <option>Paused</option>
+                    <option>Archived</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Market</label>
+                  <select class="form-control">
+                    <option selected>UK</option>
+                    <option>BR</option>
+                    <option>UK + BR</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinical Link -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Clinical Treatment Plan Link</h3>
+            </div>
+            <div class="card-body">
+              <div style="background:var(--success-light);border:1px solid #b7dfca;border-radius:8px;padding:16px;margin-bottom:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div>
+                    <div style="font-weight:600;font-size:14px;">Semaglutide Standard Titration</div>
+                    <div class="text-muted" style="font-size:12px;">CTP-WL-SEMA-STD &middot; 5 titration steps &middot; 0.25mg &rarr; 2.4mg</div>
+                  </div>
+                  <button class="btn btn-secondary btn-sm">Change Plan</button>
+                </div>
+              </div>
+              <div class="help-text">This offer is commercially linked to the above clinical protocol. The treatment plan defines the medical pathway; this offer defines how the patient pays for it.</div>
+            </div>
+          </div>
+
+          <!-- Billing Plan Link -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Billing Plan</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Billing Plan</label>
+                  <select class="form-control">
+                    <option>1M-RECURRING (Monthly, no commitment)</option>
+                    <option>3M-MONTHLY (3-month commitment, paid monthly)</option>
+                    <option selected>6M-MONTHLY (6-month commitment, paid monthly)</option>
+                    <option>12M-MONTHLY (12-month commitment, paid monthly)</option>
+                    <option>3M-ONEOFF (3-month, paid upfront)</option>
+                    <option>6M-ONEOFF (6-month, paid upfront)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Payment Frequency</label>
+                  <select class="form-control">
+                    <option selected>Every 4 weeks</option>
+                    <option>Monthly (calendar)</option>
+                    <option>One-off</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Commitment Length</label>
+                  <div style="display:flex;gap:8px;align-items:center;">
+                    <input type="number" class="form-control" value="6" style="width:80px;">
+                    <span>months</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Auto-Renew</label>
+                  <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    <span style="font-size:13px;">Auto-renew after commitment ends</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing Model -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Pricing Model</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Pricing Type</label>
+                <div style="display:flex;gap:16px;margin-top:4px;">
+                  <label style="display:flex;align-items:flex-start;gap:10px;padding:16px;border:2px solid var(--primary);border-radius:8px;cursor:pointer;flex:1;background:var(--primary-light);">
+                    <input type="radio" name="pricing" checked style="margin-top:2px;">
+                    <div>
+                      <div style="font-weight:600;">Dynamic Pricing</div>
+                      <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">Price changes based on the patient's current titration step. Lower doses = lower price.</div>
+                    </div>
+                  </label>
+                  <label style="display:flex;align-items:flex-start;gap:10px;padding:16px;border:2px solid var(--border);border-radius:8px;cursor:pointer;flex:1;">
+                    <input type="radio" name="pricing" style="margin-top:2px;">
+                    <div>
+                      <div style="font-weight:600;">All-In (Fixed)</div>
+                      <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">Same price regardless of titration step. Simpler for patient, averages out over time.</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <h4 style="font-size:13px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);">Dynamic Price per Titration Step</h4>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Step</th>
+                    <th>SKU</th>
+                    <th>Dose</th>
+                    <th>SKU Base Price</th>
+                    <th>Offer Override</th>
+                    <th>Final Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="font-mono">SEMA-025-PEN</td>
+                    <td>0.25mg</td>
+                    <td class="text-muted">&pound;165.00</td>
+                    <td><input type="text" class="form-control" value="149.00" style="width:100px;padding:4px 8px;"></td>
+                    <td><strong>&pound;149.00</strong></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="font-mono">SEMA-050-PEN</td>
+                    <td>0.5mg</td>
+                    <td class="text-muted">&pound;195.00</td>
+                    <td><input type="text" class="form-control" value="179.00" style="width:100px;padding:4px 8px;"></td>
+                    <td><strong>&pound;179.00</strong></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="font-mono">SEMA-100-PEN</td>
+                    <td>1.0mg</td>
+                    <td class="text-muted">&pound;245.00</td>
+                    <td><input type="text" class="form-control" value="229.00" style="width:100px;padding:4px 8px;"></td>
+                    <td><strong>&pound;229.00</strong></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="font-mono">SEMA-170-PEN</td>
+                    <td>1.7mg</td>
+                    <td class="text-muted">&pound;275.00</td>
+                    <td><input type="text" class="form-control" value="259.00" style="width:100px;padding:4px 8px;"></td>
+                    <td><strong>&pound;259.00</strong></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="font-mono">SEMA-240-PEN</td>
+                    <td>2.4mg</td>
+                    <td class="text-muted">&pound;320.00</td>
+                    <td><input type="text" class="form-control" value="299.00" style="width:100px;padding:4px 8px;"></td>
+                    <td><strong>&pound;299.00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Included Items -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Included Items &amp; Add-ons</h3>
+              <button class="btn btn-secondary btn-sm">+ Add Item</button>
+            </div>
+            <div class="card-body-flush">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>SKU</th>
+                    <th>Type</th>
+                    <th>Frequency</th>
+                    <th>Included in Price</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight:500;">Semaglutide Pen (current dose)</td>
+                    <td class="font-mono">SEMA-*-PEN</td>
+                    <td><span class="badge badge-primary">Medication</span></td>
+                    <td>Every shipment</td>
+                    <td><span class="badge badge-success">Yes</span></td>
+                    <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Alcohol Swabs (x10)</td>
+                    <td class="font-mono">ACC-SWABS-10</td>
+                    <td><span class="tag">Accessory</span></td>
+                    <td>Every shipment</td>
+                    <td><span class="badge badge-success">Yes</span></td>
+                    <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Sharps Bin</td>
+                    <td class="font-mono">ACC-SHARPS-1L</td>
+                    <td><span class="tag">Accessory</span></td>
+                    <td>First order only</td>
+                    <td><span class="badge badge-success">Yes</span></td>
+                    <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Needles (x4)</td>
+                    <td class="font-mono">ACC-NEEDLES-4</td>
+                    <td><span class="tag">Accessory</span></td>
+                    <td>Every shipment</td>
+                    <td><span class="badge badge-success">Yes</span></td>
+                    <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Vitamin B12 Supplement</td>
+                    <td class="font-mono">SUP-B12-30</td>
+                    <td><span class="badge badge-warning">Add-on</span></td>
+                    <td>Every shipment</td>
+                    <td><span class="badge badge-info">Optional +&pound;9.99</span></td>
+                    <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Offer Summary -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Offer Summary</h3>
+            </div>
+            <div class="card-body">
+              <div style="font-size:13px;">
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Category</span>
+                  <span class="badge badge-primary">Weight Loss</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Treatment</span>
+                  <strong>Semaglutide</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Commitment</span>
+                  <strong>6 months</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Payment</span>
+                  <strong>Every 4 weeks</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Pricing</span>
+                  <span class="badge badge-primary">Dynamic</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Price Range</span>
+                  <strong>&pound;149 – &pound;299/mo</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;">
+                  <span class="text-muted">Included Items</span>
+                  <strong>4 + 1 optional</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- State Machine -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Offer Lifecycle States</h3>
+            </div>
+            <div class="card-body">
+              <div class="step-list">
+                <div class="step-item completed">
+                  <div class="step-title">Draft</div>
+                  <div class="step-meta">Configuration in progress</div>
+                </div>
+                <div class="step-item completed">
+                  <div class="step-title">Pending Clinical Approval</div>
+                  <div class="step-meta">Treatment plan link verified</div>
+                </div>
+                <div class="step-item">
+                  <div class="step-title" style="color:var(--success);font-weight:700;">Live</div>
+                  <div class="step-meta">Visible to eligible patients</div>
+                </div>
+                <div class="step-item">
+                  <div class="step-title">Paused</div>
+                  <div class="step-meta">Temporarily hidden from new patients</div>
+                </div>
+                <div class="step-item">
+                  <div class="step-title">Archived</div>
+                  <div class="step-meta">No longer available, existing subs continue</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Promotions -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Active Promotions</h3>
+            </div>
+            <div class="card-body-flush">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">WELCOME50</div>
+                      <div class="text-muted" style="font-size:12px;">50% off first month</div>
+                    </td>
+                    <td><span class="badge badge-success">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">REFER20</div>
+                      <div class="text-muted" style="font-size:12px;">&pound;20 off for referrals</div>
+                    </td>
+                    <td><span class="badge badge-success">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

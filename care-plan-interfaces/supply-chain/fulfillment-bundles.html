@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics Rules Engine — Operations Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon supply">O</div>
+      <div>
+        <h2>Operations Portal</h2>
+        <span>Main Catalog &amp; Shipping</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Catalog</div>
+      <ul class="sidebar-nav">
+        <li><a href="catalog.html"><span class="nav-icon">&#128218;</span> Item Catalog</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Logistics</div>
+      <ul class="sidebar-nav">
+        <li><a href="fulfillment-bundles.html" class="active"><span class="nav-icon">&#x2699;</span> Logistics Rules Engine</a></li>
+        <li><a href="shipping-rules.html"><span class="nav-icon">&#128666;</span> Shipping Schedules</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="catalog.html">Operations Portal</a>
+        <span>/</span>
+        <strong>Logistics Rules Engine</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Inclusion Rule</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Logistics Rules Engine</h1>
+          <p>Create automated inclusion rules that determine what gets packed with each shipment. E.g., "If Medication = Injectable, then append SKU: Free Sharps Bin" to the manifest. Rules are evaluated at fulfilment time and automatically build the shipment manifest.</p>
+        </div>
+      </div>
+
+      <!-- Bundles List -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Automated Inclusion Rules</h3>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rule Name</th>
+                  <th>Code</th>
+                  <th>Condition (IF)</th>
+                  <th>Applies To SKU</th>
+                  <th>Then Append (THEN)</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:600;">IF Injectable + First Order</td>
+                  <td class="font-mono">RULE-INJ-FIRST</td>
+                  <td><span class="badge badge-warning">Order = First &amp; Med = Injectable</span></td>
+                  <td>
+                    <span class="tag">SEMA-*-PEN</span>
+                    <span class="tag">TST-CYP-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">Sharps Bin</span>
+                    <span class="tag">Needles x4</span>
+                    <span class="tag">Swabs x10</span>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">IF Injectable + Refill</td>
+                  <td class="font-mono">RULE-INJ-REFILL</td>
+                  <td><span class="badge badge-info">Order = Refill &amp; Med = Injectable</span></td>
+                  <td>
+                    <span class="tag">SEMA-*-PEN</span>
+                  </td>
+                  <td>
+                    <span class="tag">Needles x4</span>
+                    <span class="tag">Swabs x10</span>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">IF TRT + First Order</td>
+                  <td class="font-mono">RULE-TRT-FIRST</td>
+                  <td><span class="badge badge-warning">Order = First &amp; Category = TRT</span></td>
+                  <td>
+                    <span class="tag">TST-CYP-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">Sharps Bin</span>
+                    <span class="tag">Needles x8</span>
+                    <span class="tag">Swabs x20</span>
+                    <span class="tag">Bacteriostatic Water</span>
+                    <span class="tag">Multi-use Vial</span>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">IF TRT + Refill</td>
+                  <td class="font-mono">RULE-TRT-REFILL</td>
+                  <td><span class="badge badge-info">Order = Refill &amp; Category = TRT</span></td>
+                  <td>
+                    <span class="tag">TST-CYP-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">Needles x8</span>
+                    <span class="tag">Swabs x20</span>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">IF Oral Medication (any)</td>
+                  <td class="font-mono">RULE-ORAL-STD</td>
+                  <td><span class="badge badge-info">Med = Oral tablet/capsule</span></td>
+                  <td>
+                    <span class="tag">FIN-*</span>
+                    <span class="tag">SIL-*</span>
+                  </td>
+                  <td>
+                    <span class="text-muted" style="font-size:12px;">Medication only — no accessories</span>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">IF Hair Combo Plan</td>
+                  <td class="font-mono">RULE-HAIR-CMB</td>
+                  <td><span class="badge badge-info">Protocol = CTP-HL-FINMNX-CMB</span></td>
+                  <td>
+                    <span class="tag">FIN-1MG-90</span>
+                    <span class="tag">MNX-5PCT-60ML</span>
+                  </td>
+                  <td>
+                    <span class="tag">Finasteride 90 tabs</span>
+                    <span class="tag">Minoxidil x3 bottles</span>
+                  </td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle Detail / Editor -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Rule Editor — IF Injectable + First Order, THEN Append:</h3>
+          <button class="btn btn-secondary btn-sm">+ Add Item to Rule</button>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Rule Name</label>
+              <input type="text" class="form-control" value="IF Injectable + First Order">
+            </div>
+            <div class="form-group">
+              <label>Rule Code</label>
+              <input type="text" class="form-control font-mono" value="RULE-INJ-FIRST">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Condition (IF)</label>
+              <select class="form-control">
+                <option selected>Order = First AND Medication Type = Injectable</option>
+                <option>Order = Any AND Medication Type = Injectable</option>
+                <option>Order = Refill AND Medication Type = Injectable</option>
+                <option>Category = TRT AND Order = First</option>
+                <option>Medication Type = Oral</option>
+                <option>Custom condition...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Applies to SKU Pattern</label>
+              <input type="text" class="form-control font-mono" value="SEMA-*-PEN, TST-CYP-*">
+              <div class="help-text">Comma-separated SKU patterns. Use * as wildcard.</div>
+            </div>
+          </div>
+
+          <div class="separator"></div>
+
+          <h4 style="font-size:13px;font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);">THEN Append to Manifest</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>SKU</th>
+                <th>Quantity</th>
+                <th>Type</th>
+                <th>Cost to Patient</th>
+                <th>Notes</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:500;">Sharps Bin (1L)</td>
+                <td class="font-mono">ACC-SHARPS-1L</td>
+                <td>1</td>
+                <td><span class="tag">Accessory</span></td>
+                <td><span class="badge badge-success">Free</span></td>
+                <td class="text-muted" style="font-size:12px;">Required by law for injectable medications</td>
+                <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:500;">Injection Needles</td>
+                <td class="font-mono">ACC-NEEDLES-4</td>
+                <td>4</td>
+                <td><span class="tag">Accessory</span></td>
+                <td><span class="badge badge-success">Free</span></td>
+                <td class="text-muted" style="font-size:12px;">1 needle per injection per cycle</td>
+                <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:500;">Alcohol Swabs</td>
+                <td class="font-mono">ACC-SWABS-10</td>
+                <td>10</td>
+                <td><span class="tag">Accessory</span></td>
+                <td><span class="badge badge-success">Free</span></td>
+                <td class="text-muted" style="font-size:12px;">For injection site preparation</td>
+                <td><button class="btn btn-ghost btn-sm">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:20px;">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Save Rule</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manifest Preview -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Shipment Manifest Preview</h3>
+          <span class="text-muted" style="font-size:12px;">Preview what a patient's shipment would contain</span>
+        </div>
+        <div class="card-body">
+          <div class="form-row-3 mb-3">
+            <div class="form-group">
+              <label>Offer</label>
+              <select class="form-control">
+                <option>OFR-WL-SEMA-6M-MTH</option>
+                <option>OFR-TRT-CYP-HCG-SUB</option>
+                <option>OFR-HL-FIN-1M-SUB</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Titration Step</label>
+              <select class="form-control">
+                <option>Step 1 — 0.25mg</option>
+                <option selected>Step 3 — 1.0mg</option>
+                <option>Step 5 — 2.4mg</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Order Type</label>
+              <select class="form-control">
+                <option>First Order</option>
+                <option selected>Refill</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm mb-4" style="margin-bottom:16px;">Generate Manifest</button>
+
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:20px;">
+            <h4 style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);margin-bottom:12px;">Manifest — Refill Order (Step 3)</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Item</th>
+                  <th>SKU</th>
+                  <th>Qty</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td style="font-weight:600;">Semaglutide 1.0mg Pen</td>
+                  <td class="font-mono">SEMA-100-PEN</td>
+                  <td>1</td>
+                  <td><span class="badge badge-primary">Treatment Plan</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Injection Needles (x4)</td>
+                  <td class="font-mono">ACC-NEEDLES-4</td>
+                  <td>1 pack</td>
+                  <td><span class="tag">Rule: RULE-INJ-REFILL</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Alcohol Swabs (x10)</td>
+                  <td class="font-mono">ACC-SWABS-10</td>
+                  <td>1 pack</td>
+                  <td><span class="tag">Rule: RULE-INJ-REFILL</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top:12px;font-size:13px;color:var(--text-secondary);">
+              <strong>Shipping:</strong> DPD Next-Day Cold &middot; <strong>Est. Weight:</strong> 95g &middot; <strong>Storage:</strong> Cold chain (2-8&deg;C)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

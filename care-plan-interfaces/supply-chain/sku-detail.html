@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKU Detail — Operations Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon supply">O</div>
+      <div>
+        <h2>Operations Portal</h2>
+        <span>Main Catalog &amp; Shipping</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Catalog</div>
+      <ul class="sidebar-nav">
+        <li><a href="catalog.html" class="active"><span class="nav-icon">&#128218;</span> Item Catalog</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Logistics</div>
+      <ul class="sidebar-nav">
+        <li><a href="fulfillment-bundles.html"><span class="nav-icon">&#x2699;</span> Logistics Rules Engine</a></li>
+        <li><a href="shipping-rules.html"><span class="nav-icon">&#128666;</span> Shipping Schedules</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="catalog.html">Item Catalog</a>
+        <span>/</span>
+        <strong>SEMA-025-PEN</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Duplicate SKU</button>
+        <button class="btn btn-primary btn-sm">Edit SKU</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Semaglutide 0.25mg Pen</h1>
+          <p class="font-mono">SEMA-025-PEN</p>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <span class="badge badge-success" style="padding:6px 14px;">Enabled</span>
+          <span class="badge badge-danger" style="padding:6px 14px;">Not tracked</span>
+          <span class="badge badge-primary" style="padding:6px 14px;">Shipping required</span>
+        </div>
+      </div>
+
+      <div class="detail-layout">
+        <div>
+          <!-- Core Details -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>SKU Details</h3>
+            </div>
+            <div class="card-body-flush">
+              <dl class="detail-grid">
+                <dt>SKU Code</dt>
+                <dd class="font-mono">SEMA-025-PEN</dd>
+                <dt>Product Name</dt>
+                <dd>Semaglutide 0.25mg Injection Pen</dd>
+                <dt>Product Type</dt>
+                <dd><span class="badge badge-primary">Medication</span></dd>
+                <dt>Category</dt>
+                <dd>Weight Loss</dd>
+                <dt>Medication Name</dt>
+                <dd>Semaglutide</dd>
+                <dt>Dosage per Unit</dt>
+                <dd>0.25mg</dd>
+                <dt>Number of Units</dt>
+                <dd>1 pen (4 doses)</dd>
+                <dt>Administration</dt>
+                <dd>Subcutaneous injection</dd>
+                <dt>Controlled Med</dt>
+                <dd><span class="badge badge-info">No</span></dd>
+              </dl>
+            </div>
+          </div>
+
+          <!-- Directions & Labels -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Directions &amp; Dispensing</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Directions</label>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-size:13px;">
+                  Semaglutide 0.25mg pen, total to dispense 1 pen<br>Dose: 0.25mg subcutaneous injection once weekly
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Dispensing Label Instructions</label>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-size:13px;">
+                  Inject ONE dose (0.25mg) once weekly into abdomen, thigh, or upper arm. Rotate injection sites. Store in refrigerator (2-8&deg;C). Keep out of sunlight. Do not freeze.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical Properties -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Physical Properties &amp; Shipping</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label>Weight</label>
+                  <div style="display:flex;gap:8px;align-items:center;">
+                    <input type="text" class="form-control" value="45" style="width:80px;">
+                    <span class="text-muted">grams</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Dimensions (L x W x H)</label>
+                  <div style="display:flex;gap:4px;align-items:center;">
+                    <input type="text" class="form-control" value="16" style="width:60px;">
+                    <span>x</span>
+                    <input type="text" class="form-control" value="3" style="width:60px;">
+                    <span>x</span>
+                    <input type="text" class="form-control" value="3" style="width:60px;">
+                    <span class="text-muted">cm</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Storage Requirement</label>
+                  <select class="form-control">
+                    <option selected>Cold chain (2-8&deg;C)</option>
+                    <option>Room temperature</option>
+                    <option>Controlled room temp (15-25&deg;C)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Shipping Category</label>
+                  <select class="form-control">
+                    <option selected>Cold chain parcel</option>
+                    <option>Standard parcel</option>
+                    <option>Large letter</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Shipping Required</label>
+                  <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    <span style="font-size:13px;">Physical item requires shipping</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Linked Treatment Plans & Offers -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Used In</h3>
+            </div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div>
+                  <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);margin-bottom:8px;">Treatment Plans</h4>
+                  <div style="display:flex;flex-direction:column;gap:6px;">
+                    <a href="../clinical/treatment-plan-detail.html" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border-radius:6px;">
+                      <span class="badge badge-success" style="font-size:10px;">Active</span>
+                      <span style="font-weight:500;">CTP-WL-SEMA-STD</span>
+                      <span class="text-muted" style="font-size:12px;">Step 1</span>
+                    </a>
+                  </div>
+                </div>
+                <div>
+                  <h4 style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary);margin-bottom:8px;">Offers</h4>
+                  <div style="display:flex;flex-direction:column;gap:6px;">
+                    <a href="../commercial/offer-detail.html" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border-radius:6px;">
+                      <span class="badge badge-success" style="font-size:10px;">Live</span>
+                      <span style="font-weight:500;">OFR-WL-SEMA-6M-MTH</span>
+                    </a>
+                    <a href="#" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border-radius:6px;">
+                      <span class="badge badge-success" style="font-size:10px;">Live</span>
+                      <span style="font-weight:500;">OFR-WL-SEMA-12M-FIX</span>
+                    </a>
+                    <a href="#" style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border-radius:6px;">
+                      <span class="badge badge-success" style="font-size:10px;">Live</span>
+                      <span style="font-weight:500;">OFR-WL-SEMA-3M-MTH</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Pricing -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Pricing</h3>
+            </div>
+            <div class="card-body">
+              <div style="font-size:13px;">
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Base Price</span>
+                  <strong>&pound;165.00</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Cost (COGS)</span>
+                  <strong>&pound;62.00</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Gross Margin</span>
+                  <strong class="text-success">62%</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Tax Category</span>
+                  <strong>VAT Exempt</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;">
+                  <span class="text-muted">Channel</span>
+                  <strong>JoinVoy</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inventory -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Inventory</h3>
+            </div>
+            <div class="card-body">
+              <div style="font-size:13px;">
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Current Stock</span>
+                  <strong>2,400</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Low Stock Threshold</span>
+                  <strong>200</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Avg. Weekly Usage</span>
+                  <strong>180 units</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;">
+                  <span class="text-muted">Weeks of Stock</span>
+                  <strong class="text-success">~13 weeks</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fulfilment Bundles -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h3>Fulfilment Bundles</h3>
+            </div>
+            <div class="card-body-flush">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">Injectable First Order</div>
+                      <div class="text-muted" style="font-size:12px;">FUL-INJ-FIRST</div>
+                    </td>
+                    <td><span class="badge badge-info">3 items</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight:500;">Injectable Refill</div>
+                      <div class="text-muted" style="font-size:12px;">FUL-INJ-REFILL</div>
+                    </td>
+                    <td><span class="badge badge-info">2 items</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Consumption Rate -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Consumption Rate</h3>
+            </div>
+            <div class="card-body">
+              <div style="font-size:13px;">
+                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;">
+                  <span class="text-muted">Standard</span>
+                  <strong>4 weeks</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:8px 0;">
+                  <span class="text-muted">Extended</span>
+                  <strong>6 weeks</strong>
+                </div>
+              </div>
+              <p class="help-text mt-2">Managed in <a href="../clinical/consumption-rates.html">Clinical Portal</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

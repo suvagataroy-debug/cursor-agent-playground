@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety Boundaries — Medical Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon clinical">M</div>
+      <div>
+        <h2>Medical Portal</h2>
+        <span>Clinical &amp; Eligibility Domain</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Eligibility</div>
+      <ul class="sidebar-nav">
+        <li><a href="eligibility-rules.html"><span class="nav-icon">&#x2714;</span> Treatment Eligibility</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Protocols</div>
+      <ul class="sidebar-nav">
+        <li><a href="treatment-plans.html"><span class="nav-icon">&#x1F489;</span> Titration Protocols</a></li>
+        <li><a href="consumption-rates.html"><span class="nav-icon">&#x23F1;</span> Consumption Rates</a></li>
+        <li><a href="safety-boundaries.html" class="active"><span class="nav-icon">&#x1F6E1;</span> Safety Boundaries</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="eligibility-rules.html">Medical Portal</a>
+        <span>/</span>
+        <strong>Safety Boundaries</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Export Rules</button>
+        <button class="btn btn-primary btn-sm">+ New Exclusion Rule</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Safety Boundaries</h1>
+          <p>Implement exclusion rules to prevent specific medications from being combined with certain add-on supplements or other treatments. These rules act as hard guardrails that the Offer Engine and Shipping Service must respect.</p>
+        </div>
+      </div>
+
+      <!-- Warning Banner -->
+      <div style="background:var(--danger-light);border:1px solid #f5b7b1;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:18px;">&#9888;</span>
+        <div style="font-size:13px;line-height:1.6;">
+          <strong>Clinical Safety Override:</strong> These rules are enforced system-wide. When a medication-supplement exclusion is active, the Commercial Portal cannot include the excluded supplement as an add-on, and the Operations Portal cannot add it to a fulfilment manifest. Only medical directors can create or modify these rules.
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-label">Active Exclusion Rules</div>
+          <div class="stat-value">14</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Medication Combinations Blocked</div>
+          <div class="stat-value">8</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Supplement Restrictions</div>
+          <div class="stat-value">6</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Blocks Triggered (30d)</div>
+          <div class="stat-value text-danger">247</div>
+          <div class="stat-change">prevented at checkout/fulfilment</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active">All Rules</button>
+        <button class="tab">Medication Exclusions</button>
+        <button class="tab">Supplement Restrictions</button>
+        <button class="tab">Combination Limits</button>
+        <button class="tab">Dose Ceilings</button>
+      </div>
+
+      <!-- Exclusion Rules Table -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Medication &amp; Supplement Exclusion Rules</h3>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rule Name</th>
+                  <th>Code</th>
+                  <th>Type</th>
+                  <th>Medication (A)</th>
+                  <th>Excluded Item (B)</th>
+                  <th>Reason</th>
+                  <th>Severity</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:600;">GLP-1 + Insulin Exclusion</td>
+                  <td class="font-mono">SAF-EXC-001</td>
+                  <td><span class="badge badge-danger">Med + Med</span></td>
+                  <td>
+                    <span class="tag">SEMA-*-PEN</span>
+                  </td>
+                  <td>
+                    <span class="tag">INSULIN-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">GLP-1 agonists should not be co-prescribed with insulin without specialist supervision</td>
+                  <td><span class="badge badge-danger">Hard Block</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Semaglutide + Biotin Supplement</td>
+                  <td class="font-mono">SAF-EXC-002</td>
+                  <td><span class="badge badge-warning">Med + Supp</span></td>
+                  <td>
+                    <span class="tag">SEMA-*-PEN</span>
+                  </td>
+                  <td>
+                    <span class="tag">SUP-BIOTIN-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">Biotin may interfere with blood test results used for GLP-1 monitoring</td>
+                  <td><span class="badge badge-warning">Soft Warning</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Finasteride + Saw Palmetto</td>
+                  <td class="font-mono">SAF-EXC-003</td>
+                  <td><span class="badge badge-warning">Med + Supp</span></td>
+                  <td>
+                    <span class="tag">FIN-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">SUP-SAWPALM-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">Saw Palmetto has anti-androgenic properties that may compound with finasteride effects</td>
+                  <td><span class="badge badge-danger">Hard Block</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Sildenafil + Nitrate Supplements</td>
+                  <td class="font-mono">SAF-EXC-004</td>
+                  <td><span class="badge badge-warning">Med + Supp</span></td>
+                  <td>
+                    <span class="tag">SIL-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">SUP-NITRIC-*</span>
+                    <span class="tag">SUP-BEETROOT-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">Nitric oxide boosters combined with PDE5 inhibitors can cause dangerous hypotension</td>
+                  <td><span class="badge badge-danger">Hard Block</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Sildenafil + Tadalafil Dual</td>
+                  <td class="font-mono">SAF-EXC-005</td>
+                  <td><span class="badge badge-danger">Med + Med</span></td>
+                  <td>
+                    <span class="tag">SIL-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">TAD-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">Two PDE5 inhibitors must not be prescribed concurrently</td>
+                  <td><span class="badge badge-danger">Hard Block</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">TRT + DHEA Supplement</td>
+                  <td class="font-mono">SAF-EXC-006</td>
+                  <td><span class="badge badge-warning">Med + Supp</span></td>
+                  <td>
+                    <span class="tag">TST-CYP-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">SUP-DHEA-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">DHEA is a testosterone precursor — combined use raises hormonal excess risk</td>
+                  <td><span class="badge badge-danger">Hard Block</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">GLP-1 + High-Dose Vitamin D</td>
+                  <td class="font-mono">SAF-EXC-007</td>
+                  <td><span class="badge badge-warning">Med + Supp</span></td>
+                  <td>
+                    <span class="tag">SEMA-*-PEN</span>
+                    <span class="tag">TIRZ-*-PEN</span>
+                  </td>
+                  <td>
+                    <span class="tag">SUP-VITD-HIGH</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">High-dose vitamin D with GLP-1 may elevate calcium — standard dose OK</td>
+                  <td><span class="badge badge-warning">Soft Warning</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Finasteride + Testosterone</td>
+                  <td class="font-mono">SAF-EXC-008</td>
+                  <td><span class="badge badge-danger">Med + Med</span></td>
+                  <td>
+                    <span class="tag">FIN-*</span>
+                  </td>
+                  <td>
+                    <span class="tag">TST-CYP-*</span>
+                  </td>
+                  <td class="text-muted" style="font-size:12px;">Finasteride inhibits DHT conversion — contradicts TRT objectives without specialist oversight</td>
+                  <td><span class="badge badge-warning">Soft Warning</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dose Ceiling Rules -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>Dose Ceiling Rules</h3>
+          <button class="btn btn-secondary btn-sm">+ Add Dose Ceiling</button>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                  <th>Max Single Dose</th>
+                  <th>Max Daily Dose</th>
+                  <th>Max Weekly Dose</th>
+                  <th>Requires Override</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:500;">Semaglutide</td>
+                  <td><strong>2.4mg</strong></td>
+                  <td>—</td>
+                  <td>2.4mg</td>
+                  <td><span class="badge badge-danger">Clinical Director only</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">Tirzepatide</td>
+                  <td><strong>15mg</strong></td>
+                  <td>—</td>
+                  <td>15mg</td>
+                  <td><span class="badge badge-danger">Clinical Director only</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">Finasteride</td>
+                  <td><strong>1mg</strong></td>
+                  <td>1mg</td>
+                  <td>—</td>
+                  <td><span class="badge badge-warning">Senior Clinician</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">Sildenafil</td>
+                  <td><strong>100mg</strong></td>
+                  <td>100mg</td>
+                  <td>—</td>
+                  <td><span class="badge badge-warning">Senior Clinician</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">Testosterone Cypionate</td>
+                  <td><strong>200mg</strong></td>
+                  <td>—</td>
+                  <td>200mg</td>
+                  <td><span class="badge badge-danger">Clinical Director only</span></td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create Exclusion Rule Form -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Create Exclusion Rule</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Rule Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Semaglutide + Iron Supplement">
+            </div>
+            <div class="form-group">
+              <label>Rule Code</label>
+              <input type="text" class="form-control font-mono" placeholder="e.g. SAF-EXC-009">
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Exclusion Type</label>
+              <select class="form-control">
+                <option>Medication + Supplement</option>
+                <option>Medication + Medication</option>
+                <option>Supplement + Supplement</option>
+                <option>Category-wide restriction</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Severity</label>
+              <select class="form-control">
+                <option>Hard Block — prevents combination entirely</option>
+                <option>Soft Warning — shows clinician warning, allows override</option>
+              </select>
+              <div class="help-text">Hard blocks cannot be overridden. Soft warnings require clinician sign-off.</div>
+            </div>
+            <div class="form-group">
+              <label>Override Authority</label>
+              <select class="form-control">
+                <option>No override (Hard Block only)</option>
+                <option>Any Clinician</option>
+                <option>Senior Clinician</option>
+                <option>Clinical Director only</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Medication (Item A) — SKU Patterns</label>
+              <input type="text" class="form-control font-mono" placeholder="e.g. SEMA-*-PEN, TIRZ-*-PEN">
+              <div class="help-text">Comma-separated SKU patterns. Use * as wildcard. These are the primary medications affected.</div>
+            </div>
+            <div class="form-group">
+              <label>Excluded Item (Item B) — SKU Patterns</label>
+              <input type="text" class="form-control font-mono" placeholder="e.g. SUP-IRON-*, SUP-FERROUS-*">
+              <div class="help-text">SKU patterns that must NOT be combined with Item A.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Clinical Rationale</label>
+            <textarea class="form-control" rows="3" placeholder="Explain the medical reason for this exclusion. This will be shown to clinicians when the rule is triggered."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Enforcement Points</label>
+              <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+                <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <input type="checkbox" checked> <strong>Offer Builder</strong> — prevent excluded item from being added as an add-on
+                </label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <input type="checkbox" checked> <strong>Checkout</strong> — block patient from selecting excluded item at purchase
+                </label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <input type="checkbox" checked> <strong>Fulfilment Manifest</strong> — prevent excluded item from being packed with medication
+                </label>
+                <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <input type="checkbox" checked> <strong>Prescription Generation</strong> — flag exclusion during clinical review
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Applies to Categories</label>
+              <select class="form-control" multiple style="min-height:100px;">
+                <option selected>Weight Loss</option>
+                <option>Hair</option>
+                <option>ED</option>
+                <option>TRT</option>
+                <option selected>All Categories</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px;">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-danger">Create Exclusion Rule</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

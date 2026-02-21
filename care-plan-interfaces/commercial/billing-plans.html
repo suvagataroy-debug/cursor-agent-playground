@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Plans — Commercial Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon commercial">$</div>
+      <div>
+        <h2>Commercial Portal</h2>
+        <span>Offer, Pricing &amp; Promotion</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Offers</div>
+      <ul class="sidebar-nav">
+        <li><a href="offers.html"><span class="nav-icon">&#127873;</span> Offer Builder</a></li>
+        <li><a href="addons.html"><span class="nav-icon">&#x2795;</span> Add-on Configuration</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Billing</div>
+      <ul class="sidebar-nav">
+        <li><a href="billing-plans.html" class="active"><span class="nav-icon">&#128179;</span> Plan Lengths</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Pricing &amp; Promotions</div>
+      <ul class="sidebar-nav">
+        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Strategies</a></li>
+        <li><a href="promotions.html"><span class="nav-icon">&#127941;</span> Promotion Manager</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="offers.html">Commercial Portal</a>
+        <span>/</span>
+        <strong>Billing Plans</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm">+ New Billing Plan</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Plan Lengths</h1>
+          <p>Define the commercial commitment durations — 3, 6, or 12-month subscriptions — with payment frequency and recurring cycles. Plan lengths are independent of clinical protocols and consumption rates.</p>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div style="background:var(--primary-light);border:1px solid #c5d9f7;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:18px;">&#9432;</span>
+        <div style="font-size:13px;line-height:1.6;">
+          <strong>Delinked from Clinical Plans:</strong> Billing plans define how the patient pays (duration, frequency). They do NOT dictate what medication is sent or when — that's governed by the Clinical Treatment Plan and Consumption Rate. A patient on a "6M Monthly" billing plan may receive medication every 4 or 6 weeks based on their clinical consumption rate.
+        </div>
+      </div>
+
+      <!-- Billing Plans Table -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h3>All Billing Plans</h3>
+        </div>
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plan Name</th>
+                  <th>Code</th>
+                  <th>Duration</th>
+                  <th>Payment Type</th>
+                  <th>Billing Cycle</th>
+                  <th>Auto-Renew</th>
+                  <th>Used By Offers</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:600;">Monthly Recurring</td>
+                  <td class="font-mono">1M-RECURRING</td>
+                  <td>No commitment</td>
+                  <td><span class="badge badge-primary">Recurring</span></td>
+                  <td>Every 4 weeks</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                  </td>
+                  <td>6</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">3-Month Monthly</td>
+                  <td class="font-mono">3M-MONTHLY</td>
+                  <td>3 months</td>
+                  <td><span class="badge badge-primary">Recurring</span></td>
+                  <td>Every 4 weeks</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                  </td>
+                  <td>4</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">6-Month Monthly</td>
+                  <td class="font-mono">6M-MONTHLY</td>
+                  <td>6 months</td>
+                  <td><span class="badge badge-primary">Recurring</span></td>
+                  <td>Every 4 weeks</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                  </td>
+                  <td>5</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">12-Month Monthly</td>
+                  <td class="font-mono">12M-MONTHLY</td>
+                  <td>12 months</td>
+                  <td><span class="badge badge-primary">Recurring</span></td>
+                  <td>Every 4 weeks</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                  </td>
+                  <td>3</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">3-Month Upfront</td>
+                  <td class="font-mono">3M-ONEOFF</td>
+                  <td>3 months</td>
+                  <td><span class="badge badge-info">One-off</span></td>
+                  <td>Single payment</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox"><span class="slider"></span></label>
+                  </td>
+                  <td>2</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">6-Month Upfront</td>
+                  <td class="font-mono">6M-ONEOFF</td>
+                  <td>6 months</td>
+                  <td><span class="badge badge-info">One-off</span></td>
+                  <td>Single payment</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox"><span class="slider"></span></label>
+                  </td>
+                  <td>1</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:600;">Quarterly Recurring</td>
+                  <td class="font-mono">3M-RECURRING</td>
+                  <td>No commitment</td>
+                  <td><span class="badge badge-primary">Recurring</span></td>
+                  <td>Every 12 weeks</td>
+                  <td>
+                    <label class="form-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                  </td>
+                  <td>3</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create/Edit Form -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Create / Edit Billing Plan</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Plan Name</label>
+              <input type="text" class="form-control" placeholder="e.g. 6-Month Monthly">
+            </div>
+            <div class="form-group">
+              <label>Plan Code</label>
+              <input type="text" class="form-control font-mono" placeholder="e.g. 6M-MONTHLY">
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Commitment Duration</label>
+              <div style="display:flex;gap:8px;">
+                <input type="number" class="form-control" placeholder="6" style="width:80px;">
+                <select class="form-control">
+                  <option>months</option>
+                  <option>weeks</option>
+                  <option>No commitment</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Payment Type</label>
+              <select class="form-control">
+                <option>Recurring</option>
+                <option>One-off (upfront)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Billing Cycle</label>
+              <div style="display:flex;gap:8px;">
+                <input type="number" class="form-control" placeholder="4" style="width:80px;">
+                <select class="form-control">
+                  <option>weeks</option>
+                  <option>months (calendar)</option>
+                </select>
+              </div>
+              <div class="help-text">How often the patient is charged</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Auto-Renew Default</label>
+              <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+                <label class="form-switch"><input type="checkbox"><span class="slider"></span></label>
+                <span style="font-size:13px;">Automatically renew after commitment period ends</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Cancellation Policy</label>
+              <select class="form-control">
+                <option>Cancel anytime (after commitment)</option>
+                <option>Early cancellation fee applies</option>
+                <option>No cancellation allowed</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px;">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Create Billing Plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

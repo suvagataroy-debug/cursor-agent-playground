@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offer Engine — Commercial Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon commercial">$</div>
+      <div>
+        <h2>Commercial Portal</h2>
+        <span>Offer, Pricing &amp; Promotion</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Offers</div>
+      <ul class="sidebar-nav">
+        <li><a href="offers.html" class="active"><span class="nav-icon">&#127873;</span> Offer Builder <span class="badge">18</span></a></li>
+        <li><a href="addons.html"><span class="nav-icon">&#x2795;</span> Add-on Configuration</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Billing</div>
+      <ul class="sidebar-nav">
+        <li><a href="billing-plans.html"><span class="nav-icon">&#128179;</span> Plan Lengths</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Pricing &amp; Promotions</div>
+      <ul class="sidebar-nav">
+        <li><a href="pricing.html"><span class="nav-icon">&#128178;</span> Pricing Strategies</a></li>
+        <li><a href="promotions.html"><span class="nav-icon">&#127941;</span> Promotion Manager</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="../index.html"><span class="nav-icon">&#x2190;</span> Back to Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">Manual 2.0 — Care Plans</div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-breadcrumb">
+        <a href="../index.html">Control Planes</a>
+        <span>/</span>
+        <a href="offers.html">Commercial Portal</a>
+        <span>/</span>
+        <strong>Offer Engine</strong>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary btn-sm">Export</button>
+        <a href="offer-detail.html" class="btn btn-primary btn-sm">+ New Offer</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div>
+          <h1>Offer Builder</h1>
+          <p>Link a validated Clinical Protocol to a specific Billing Plan to create a unique Offer ID. Each offer is "the deal" presented to the patient — bundling medications, add-ons, and total value.</p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-label">Active Offers</div>
+          <div class="stat-value">18</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Avg. Conversion</div>
+          <div class="stat-value">24%</div>
+          <div class="stat-change up">+3% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Subscriptions</div>
+          <div class="stat-value">42,180</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">MRR</div>
+          <div class="stat-value">&pound;2.1M</div>
+          <div class="stat-change up">+12% MoM</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search-input">
+          <input type="text" placeholder="Search offers by name, code, or treatment plan...">
+        </div>
+        <select class="form-control" style="width:150px;">
+          <option>All Categories</option>
+          <option>Weight Loss</option>
+          <option>Hair</option>
+          <option>ED</option>
+          <option>TRT</option>
+        </select>
+        <select class="form-control" style="width:150px;">
+          <option>All Pricing Models</option>
+          <option>Dynamic</option>
+          <option>All-In (Fixed)</option>
+        </select>
+        <select class="form-control" style="width:120px;">
+          <option>All Statuses</option>
+          <option>Live</option>
+          <option>Draft</option>
+          <option>Paused</option>
+          <option>Archived</option>
+        </select>
+      </div>
+
+      <!-- Offers Table -->
+      <div class="card">
+        <div class="card-body-flush">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Offer Name</th>
+                  <th>Code</th>
+                  <th>Treatment Plan</th>
+                  <th>Billing Plan</th>
+                  <th>Pricing Model</th>
+                  <th>Price</th>
+                  <th>Channel</th>
+                  <th>Status</th>
+                  <th>Subs</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="offer-detail.html" style="font-weight:600;">Semaglutide — 6M Monthly</a>
+                    <div class="text-muted" style="font-size:12px;">Pay monthly, 6 month commitment</div>
+                  </td>
+                  <td class="font-mono">OFR-WL-SEMA-6M-MTH</td>
+                  <td><a href="../clinical/treatment-plan-detail.html">CTP-WL-SEMA-STD</a></td>
+                  <td>6M-MONTHLY</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>&pound;149–299/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>8,420</td>
+                  <td>
+                    <a href="offer-detail.html" class="btn btn-ghost btn-sm">Edit</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Semaglutide — 12M All-In</div>
+                    <div class="text-muted" style="font-size:12px;">Fixed price regardless of titration step</div>
+                  </td>
+                  <td class="font-mono">OFR-WL-SEMA-12M-FIX</td>
+                  <td><a href="../clinical/treatment-plan-detail.html">CTP-WL-SEMA-STD</a></td>
+                  <td>12M-MONTHLY</td>
+                  <td><span class="badge badge-info">All-In</span></td>
+                  <td>&pound;199/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>5,130</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Semaglutide — 3M Starter</div>
+                    <div class="text-muted" style="font-size:12px;">Short commitment trial plan</div>
+                  </td>
+                  <td class="font-mono">OFR-WL-SEMA-3M-MTH</td>
+                  <td>CTP-WL-SEMA-STD</td>
+                  <td>3M-MONTHLY</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>&pound;159–309/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>3,200</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Finasteride — Monthly</div>
+                    <div class="text-muted" style="font-size:12px;">30 tabs, monthly recurring</div>
+                  </td>
+                  <td class="font-mono">OFR-HL-FIN-1M-SUB</td>
+                  <td>CTP-HL-FIN-1MG</td>
+                  <td>1M-RECURRING</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>&pound;44/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>12,400</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Finasteride + Minoxidil Bundle — Quarterly</div>
+                    <div class="text-muted" style="font-size:12px;">90 tabs + 3x minoxidil, every 3 months</div>
+                  </td>
+                  <td class="font-mono">OFR-HL-FINMNX-3M-SUB</td>
+                  <td>CTP-HL-FINMNX-CMB</td>
+                  <td>3M-RECURRING</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>&pound;114/quarter</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>6,800</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">TRT Membership — Cypionate + HCG</div>
+                    <div class="text-muted" style="font-size:12px;">All-inclusive TRT membership</div>
+                  </td>
+                  <td class="font-mono">OFR-TRT-CYP-HCG-SUB</td>
+                  <td>CTP-TRT-CYP-STD</td>
+                  <td>1M-RECURRING</td>
+                  <td><span class="badge badge-info">All-In</span></td>
+                  <td>&pound;159/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>2,400</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Sildenafil — Monthly PRN</div>
+                    <div class="text-muted" style="font-size:12px;">8 tabs per month, as needed</div>
+                  </td>
+                  <td class="font-mono">OFR-ED-SIL-1M-PRN</td>
+                  <td>CTP-ED-SIL-PRN</td>
+                  <td>1M-RECURRING</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>&pound;29/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-success"><span class="status-dot active"></span>Live</span></td>
+                  <td>3,830</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:600;">Tirzepatide — 6M Monthly</div>
+                    <div class="text-muted" style="font-size:12px;">New Mounjaro offering</div>
+                  </td>
+                  <td class="font-mono">OFR-WL-TIRZ-6M-MTH</td>
+                  <td>CTP-WL-TIRZ-STD</td>
+                  <td>6M-MONTHLY</td>
+                  <td><span class="badge badge-primary">Dynamic</span></td>
+                  <td>&pound;199–399/mo</td>
+                  <td>JoinVoy</td>
+                  <td><span class="badge badge-warning"><span class="status-dot draft"></span>Draft</span></td>
+                  <td>0</td>
+                  <td>
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
