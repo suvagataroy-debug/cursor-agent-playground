@@ -11,7 +11,7 @@ export default function TitrationProtocolDetailPage() {
       <Topbar
         breadcrumbs={[
           { label: "Control Planes", href: "/" },
-          { label: "Titration Protocols", href: "/medical/titration-protocols" },
+          { label: "Treatment Plans", href: "/medical/titration-protocols" },
           { label: "Semaglutide Standard Titration" },
         ]}
         actions={<><button className="btn btn-secondary btn-sm">Duplicate Plan</button><button className="btn btn-primary btn-sm">Edit Plan</button></>}

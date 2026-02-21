@@ -9,27 +9,26 @@ export default function Dashboard() {
         <p style={{ fontSize: 16, color: "var(--text-secondary)", maxWidth: 640, margin: "0 auto" }}>Configuration interfaces for Manual 2.0&apos;s care plan architecture. Three specialized admin portals for medical directors, product managers, and operations teams.</p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 48 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginBottom: 48 }}>
         {[
           {
             icon: "\u2695", iconBg: "#e6f4ea", iconColor: "#0d904f",
-            title: "Medical Portal", desc: "Managed by medical directors and clinical leads. Define eligibility criteria, titration protocols, consumption rates, and safety boundaries.",
+            title: "Medical Portal", desc: "Managed by medical directors and clinical leads. Define eligibility criteria, treatment plans, consumption rates, and safety boundaries.",
             screens: [
               { href: "/medical/eligibility", icon: "\u2714", label: "Create Treatment Eligibility" },
-              { href: "/medical/titration-protocols", icon: "\uD83D\uDC89", label: "Configure Titration Protocols" },
-              { href: "/medical/titration-protocol-detail", icon: "\uD83D\uDCCB", label: "Titration Protocol Detail" },
+              { href: "/medical/titration-protocols", icon: "\uD83D\uDC89", label: "Configure Treatment Plans" },
+              { href: "/medical/titration-protocol-detail", icon: "\uD83D\uDCCB", label: "Treatment Plan Detail" },
               { href: "/medical/consumption-rates", icon: "\u23F1", label: "Define Consumption Rates" },
               { href: "/medical/safety-boundaries", icon: "\uD83D\uDEE1", label: "Set Safety Boundaries" },
             ],
           },
           {
             icon: "\uD83D\uDCB0", iconBg: "#e8f0fe", iconColor: "#1a73e8",
-            title: "Commercial Portal", desc: "For marketing and product managers. Package clinical protocols into marketable offers, manage plan lengths, pricing, and promotions.",
+            title: "Commercial Portal", desc: "For marketing and product managers. Package clinical protocols into marketable offers, billing, pricing, and promotions.",
             screens: [
               { href: "/commercial/offers", icon: "\uD83C\uDF81", label: "Offer Builder" },
               { href: "/commercial/offer-detail", icon: "\uD83D\uDCC4", label: "Offer Configuration" },
-              { href: "/commercial/plan-lengths", icon: "\uD83D\uDCB3", label: "Manage Plan Lengths" },
-              { href: "/commercial/pricing", icon: "\uD83D\uDCB2", label: "Configure Pricing Strategies" },
+              { href: "/commercial/pricing", icon: "\uD83D\uDCB2", label: "Pricing Simulator" },
               { href: "/commercial/promotions", icon: "\uD83C\uDFC5", label: "Promotion Manager" },
               { href: "/commercial/addons", icon: "\u2795", label: "Add-on Configuration" },
             ],
@@ -42,6 +41,14 @@ export default function Dashboard() {
               { href: "/operations/sku-detail", icon: "\uD83D\uDD2C", label: "SKU Detail" },
               { href: "/operations/logistics-rules", icon: "\u2699", label: "Logistics Rules Engine" },
               { href: "/operations/shipping-schedules", icon: "\uD83D\uDE9A", label: "Shipping Schedule Management" },
+            ],
+          },
+          {
+            icon: "\uD83D\uDC64", iconBg: "#f3e8ff", iconColor: "#7c3aed",
+            title: "Customer Portal", desc: "View customer-facing state: current offer, treatment plan, billing, and eligibility for a particular customer.",
+            screens: [
+              { href: "/customer-portal", icon: "\uD83D\uDC64", label: "Customer overview" },
+              { href: "/customer-portal/jane-doe", icon: "\uD83D\uDCCB", label: "Customer detail" },
             ],
           },
         ].map((portal, i) => (
@@ -78,8 +85,8 @@ export default function Dashboard() {
           ].map((item, i) => {
             if (!item) return <div key={i} style={{ fontSize: 22, color: "var(--text-muted)", padding: "0 10px" }}>&rarr;</div>;
             return (
-              <div key={i} style={{ padding: "14px 20px", borderRadius: 8, textAlign: "center" as const, minWidth: 140, border: `2px solid ${item.border}`, background: item.bg, color: item.color }}>
-                <div style={{ fontSize: 11, textTransform: "uppercase" as const, letterSpacing: 0.5, fontWeight: 600 }}>{item.label}</div>
+              <div key={i} style={{ padding: "14px 20px", borderRadius: 8, textAlign: "center", minWidth: 140, border: "2px solid " + item.border, background: item.bg, color: item.color }}>
+                <div style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600 }}>{item.label}</div>
                 <div style={{ fontSize: 13, fontWeight: 600, marginTop: 2 }}>{item.name}</div>
               </div>
             );

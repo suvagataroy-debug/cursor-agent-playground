@@ -3,7 +3,7 @@ import Topbar from "@/components/Topbar";
 import { medicalSidebar } from "@/components/sidebars";
 import Link from "next/link";
 
-export const metadata = { title: "Titration Protocols — Medical Portal" };
+export const metadata = { title: "Treatment Plans — Medical Portal" };
 
 const plans = [
   { name: "Semaglutide Standard Titration", sub: "Starting dose 0.25mg, target 2.4mg", code: "CTP-WL-SEMA-STD", cat: "Weight Loss", catClass: "badge-primary", med: "Semaglutide (Wegovy)", steps: ["0.25mg", "0.5mg", "1mg", "1.7mg", "2.4mg"], dur: "Ongoing", active: true, offers: 4, hasDetail: true },
@@ -21,14 +21,14 @@ export default function TitrationProtocolsPage() {
         breadcrumbs={[
           { label: "Control Planes", href: "/" },
           { label: "Medical Portal", href: "/medical/eligibility" },
-          { label: "Titration Protocols" },
+          { label: "Treatment Plans" },
         ]}
-        actions={<button className="btn btn-primary btn-sm">+ New Titration Protocol</button>}
+        actions={<button className="btn btn-primary btn-sm">+ New Treatment Plan</button>}
       />
       <div className="content">
         <div className="page-header">
           <div>
-            <h1>Titration Protocols</h1>
+            <h1>Treatment Plans</h1>
             <p>Configure automated SKU sequences and dosage escalation logic. Each protocol maps a clinical pathway independent of commercial pricing — defining the medical journey from starting dose to maintenance.</p>
           </div>
         </div>

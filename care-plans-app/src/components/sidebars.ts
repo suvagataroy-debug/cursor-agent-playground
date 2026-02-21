@@ -15,7 +15,7 @@ export const medicalSidebar = {
     {
       title: "Protocols",
       items: [
-        { href: "/medical/titration-protocols", icon: "\uD83D\uDC89", label: "Titration Protocols" },
+        { href: "/medical/titration-protocols", icon: "\uD83D\uDC89", label: "Treatment Plans" },
         { href: "/medical/consumption-rates", icon: "\u23F1", label: "Consumption Rates" },
         { href: "/medical/safety-boundaries", icon: "\uD83D\uDEE1", label: "Safety Boundaries" },
       ],
@@ -39,15 +39,9 @@ export const commercialSidebar = {
       ],
     },
     {
-      title: "Billing",
-      items: [
-        { href: "/commercial/plan-lengths", icon: "\uD83D\uDCB3", label: "Plan Lengths" },
-      ],
-    },
-    {
       title: "Pricing & Promotions",
       items: [
-        { href: "/commercial/pricing", icon: "\uD83D\uDCB2", label: "Pricing Strategies" },
+        { href: "/commercial/pricing", icon: "\uD83D\uDCB2", label: "Pricing Simulator" },
         { href: "/commercial/promotions", icon: "\uD83C\uDFC5", label: "Promotion Manager" },
       ],
     },
@@ -73,6 +67,24 @@ export const operationsSidebar = {
       items: [
         { href: "/operations/logistics-rules", icon: "\u2699", label: "Logistics Rules Engine" },
         { href: "/operations/shipping-schedules", icon: "\uD83D\uDE9A", label: "Shipping Schedules" },
+      ],
+    },
+  ],
+};
+
+export const customerPortalSidebar = {
+  brand: {
+    letter: "C",
+    title: "Customer Portal",
+    subtitle: "Customer view & plans",
+    colorClass: "clinical",
+  },
+  sections: [
+    {
+      title: "Customers",
+      items: [
+        { href: "/customer-portal", icon: "\uD83D\uDC64", label: "Customer overview" },
+        { href: "/customer-portal/jane-doe", icon: "\uD83D\uDCCB", label: "Customer detail" },
       ],
     },
   ],
