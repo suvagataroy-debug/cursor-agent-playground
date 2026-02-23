@@ -84,7 +84,7 @@ export const customerPortalSidebar = {
       title: "Customers",
       items: [
         { href: "/customer-portal", icon: "\uD83D\uDC64", label: "Customer overview" },
-        { href: "/customer-portal/jane-doe", icon: "\uD83D\uDCCB", label: "Customer detail" },
+        { href: "https://care-plan-management.vercel.app/customer-portal/jane-doe", icon: "\uD83D\uDCCB", label: "Customer detail" },
       ],
     },
   ],

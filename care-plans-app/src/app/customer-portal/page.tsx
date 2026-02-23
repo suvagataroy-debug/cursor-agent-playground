@@ -1,7 +1,6 @@
 import PortalLayout from "@/components/PortalLayout";
 import Topbar from "@/components/Topbar";
 import { customerPortalSidebar } from "@/components/sidebars";
-import Link from "next/link";
 
 export const metadata = { title: "Customer Portal — Customer overview" };
 
@@ -45,7 +44,7 @@ export default function CustomerPortalOverviewPage() {
                       <td className="text-muted">{c.email}</td>
                       <td><span style={{ fontWeight: 500 }}>{c.offer}</span><div className="text-muted font-mono" style={{ fontSize: 11 }}>{c.offerId}</div></td>
                       <td><span className="tag">{c.protocol}</span></td>
-                      <td><Link href={`/customer-portal/${c.id}`} className="btn btn-ghost btn-sm">View detail</Link></td>
+                      <td><a href={c.id === "jane-doe" ? "https://care-plan-management.vercel.app/customer-portal/jane-doe" : `https://care-plan-management.vercel.app/customer-portal/${c.id}`} className="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer">View detail</a></td>
                     </tr>
                   ))}
                 </tbody>
