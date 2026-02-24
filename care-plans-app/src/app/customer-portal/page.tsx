@@ -44,7 +44,13 @@ export default function CustomerPortalOverviewPage() {
                       <td className="text-muted">{c.email}</td>
                       <td><span style={{ fontWeight: 500 }}>{c.offer}</span><div className="text-muted font-mono" style={{ fontSize: 11 }}>{c.offerId}</div></td>
                       <td><span className="tag">{c.protocol}</span></td>
-                      <td><a href={c.id === "jane-doe" ? "https://care-plan-management.vercel.app/customer-portal/jane-doe" : `https://care-plan-management.vercel.app/customer-portal/${c.id}`} className="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer">View detail</a></td>
+                      <td>
+                        {c.id === "jane-doe" ? (
+                          <a href="https://care-plan-management.vercel.app/customer-portal/jane-doe" className="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer">View detail</a>
+                        ) : (
+                          <span className="btn btn-ghost btn-sm" style={{ cursor: "default", opacity: 0.7 }}>View detail</span>
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
