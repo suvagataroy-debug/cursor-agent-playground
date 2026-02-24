@@ -46,7 +46,7 @@ export default function CustomerPortalOverviewPage() {
                       <td><span className="tag">{c.protocol}</span></td>
                       <td>
                         {c.id === "jane-doe" ? (
-                          <a href="https://care-plan-management.vercel.app/customer-portal/jane-doe" className="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer">View detail</a>
+                          <a href="https://care-plan-management.vercel.app/customer-portal/jane-doe" className="btn btn-ghost btn-sm" rel="noopener noreferrer">View detail</a>
                         ) : (
                           <span className="btn btn-ghost btn-sm" style={{ cursor: "default", opacity: 0.7 }}>View detail</span>
                         )}
