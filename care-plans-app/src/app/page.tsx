@@ -48,7 +48,7 @@ export default function Dashboard() {
             title: "Customer Portal", desc: "View customer-facing state: current offer, treatment plan, billing, and eligibility for a particular customer.",
             screens: [
               { href: "/customer-portal", icon: "\uD83D\uDC64", label: "Customer overview" },
-              { href: "/customer-portal/jane-doe", icon: "\uD83D\uDCCB", label: "Customer detail" },
+              { href: "https://care-plan-management.vercel.app/customer-portal/jane-doe", icon: "\uD83D\uDCCB", label: "Customer detail" },
             ],
           },
         ].map((portal, i) => (
