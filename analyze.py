@@ -445,33 +445,35 @@ print()
 
 print("## By Team")
 print()
-print("| Team | Created | Resolved In SLA | Resolved Failed SLA | Open & Breached | % In SLA |")
-print("|------|---------|-----------------|---------------------|-----------------|----------|")
+print("| Team | Created | Resolved In SLA | Resolved Failed SLA | Open & Breached | Open & Not Breached | % In SLA |")
+print("|------|---------|-----------------|---------------------|-----------------|---------------------|----------|")
 
 sorted_teams = sorted(team_stats.items(), key=lambda x: x[1]["total_created"], reverse=True)
 t_created = 0
 t_in_sla = 0
 t_open_breached = 0
 t_resolved_failed = 0
+t_open_not_breached = 0
 
 for team, s in sorted_teams:
     denom = s["resolved_in_sla"] + s["open_breached"]
     pct = f"{s['resolved_in_sla']/denom*100:.0f}%" if denom > 0 else "N/A"
-    print(f"| {team} | {s['total_created']} | {s['resolved_in_sla']} | {s['resolved_failed_sla']} | {s['open_breached']} | {pct} |")
+    print(f"| {team} | {s['total_created']} | {s['resolved_in_sla']} | {s['resolved_failed_sla']} | {s['open_breached']} | {s['open_not_breached']} | {pct} |")
     t_created += s["total_created"]
     t_in_sla += s["resolved_in_sla"]
     t_open_breached += s["open_breached"]
     t_resolved_failed += s["resolved_failed_sla"]
+    t_open_not_breached += s["open_not_breached"]
 
 denom_total = t_in_sla + t_open_breached
 pct_total = f"{t_in_sla/denom_total*100:.0f}%" if denom_total > 0 else "N/A"
-print(f"| **TOTAL** | **{t_created}** | **{t_in_sla}** | **{t_resolved_failed}** | **{t_open_breached}** | **{pct_total}** |")
+print(f"| **TOTAL** | **{t_created}** | **{t_in_sla}** | **{t_resolved_failed}** | **{t_open_breached}** | **{t_open_not_breached}** | **{pct_total}** |")
 
 print()
 print("## By Pillar")
 print()
 
-pillar_stats = defaultdict(lambda: {"total_created": 0, "resolved_in_sla": 0, "resolved_failed_sla": 0, "open_breached": 0, "teams": []})
+pillar_stats = defaultdict(lambda: {"total_created": 0, "resolved_in_sla": 0, "resolved_failed_sla": 0, "open_breached": 0, "open_not_breached": 0, "teams": []})
 
 for team, s in team_stats.items():
     pillar = TEAM_TO_PILLAR.get(team, "Unknown")
@@ -479,11 +481,12 @@ for team, s in team_stats.items():
     pillar_stats[pillar]["resolved_in_sla"] += s["resolved_in_sla"]
     pillar_stats[pillar]["resolved_failed_sla"] += s["resolved_failed_sla"]
     pillar_stats[pillar]["open_breached"] += s["open_breached"]
+    pillar_stats[pillar]["open_not_breached"] += s["open_not_breached"]
     if team not in pillar_stats[pillar]["teams"]:
         pillar_stats[pillar]["teams"].append(team)
 
-print("| Pillar | Created | Resolved In SLA | Resolved Failed SLA | Open & Breached | % In SLA |")
-print("|--------|---------|-----------------|---------------------|-----------------|----------|")
+print("| Pillar | Created | Resolved In SLA | Resolved Failed SLA | Open & Breached | Open & Not Breached | % In SLA |")
+print("|--------|---------|-----------------|---------------------|-----------------|---------------------|----------|")
 
 for pillar_name in ["Scale", "Growth", "Engage", "Incubate", "Rebrand"]:
     if pillar_name not in pillar_stats:
@@ -491,7 +494,7 @@ for pillar_name in ["Scale", "Growth", "Engage", "Incubate", "Rebrand"]:
     s = pillar_stats[pillar_name]
     denom = s["resolved_in_sla"] + s["open_breached"]
     pct = f"{s['resolved_in_sla']/denom*100:.0f}%" if denom > 0 else "N/A"
-    print(f"| **{pillar_name}** | {s['total_created']} | {s['resolved_in_sla']} | {s['resolved_failed_sla']} | {s['open_breached']} | **{pct}** |")
+    print(f"| **{pillar_name}** | {s['total_created']} | {s['resolved_in_sla']} | {s['resolved_failed_sla']} | {s['open_breached']} | {s['open_not_breached']} | **{pct}** |")
 
 print()
 print("### Pillar Team Breakdown")
