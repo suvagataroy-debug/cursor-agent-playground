@@ -7,35 +7,32 @@ from datetime import datetime
 CANCELLED_STATUSES = {"Canceled", "Cancelled", "Duplicate"}
 
 TEAM_TO_PILLAR = {
-    "Weight Loss UK": "Scale",
-    "Weight Loss BR": "Scale",
-    "WL DE Migration": "Scale",
-    "Global Hair Loss": "Scale",
-    "Voy Menopause": "Incubate",
-    "TRT": "Scale",
-    "Commerce": "Scale",
-    "Payments": "Scale",
-    "Medical Journey": "Scale",
     "Clinical Experience": "Scale",
     "Pharmacy & Ops": "Scale",
-    "Patient Experience": "Scale",
+    "Commerce": "Scale",
+    "Payments": "Scale",
     "Category Tools": "Scale",
+    "Patient Experience": "Scale",
+    "Dev Productivity": "Scale",
+
+    "Voy Menopause": "Incubate",
     "Diagnostics": "Incubate",
+
+    "Unified App": "Growth",
+    "TRT": "Growth",
+    "Weight Loss UK": "Growth",
+    "Global Hair Loss": "Growth",
+    "Weight Loss BR": "Growth",
+
     "Engagement": "Engage",
     "Content and Community": "Engage",
     "Engage Pillar": "Engage",
-    "Unified App": "Growth",
-    "Rebrand": "Growth",
-    "Growth Pillar": "Growth",
-    "Growth Marketing Platform": "Growth",
-    "Organic": "Growth",
-    "RAF": "Growth",
-    "Dev Productivity": "Incubate",
-    "Security": "Incubate",
-    "Observability": "Incubate",
-    "Incubate Pillar": "Incubate",
-    "Voyage Design System": "Incubate",
-    "[QA] General Bugs Collection": "Unassigned",
+    "Medical Journey": "Engage",
+
+    "Rebrand": "Rebrand",
+
+    "[QA] General Bugs Collection": "EXCLUDE",
+    "Voyage Design System": "EXCLUDE",
 }
 
 issues = [
@@ -403,6 +400,11 @@ for team, status, completed, breach in issues:
         excluded += 1
         continue
 
+    pillar = TEAM_TO_PILLAR.get(team, "Unknown")
+    if pillar == "EXCLUDE":
+        excluded += 1
+        continue
+
     team_stats[team]["total_created"] += 1
 
     if not completed:
@@ -476,7 +478,7 @@ for team, s in team_stats.items():
 print("| Pillar | Created | Resolved | In SLA | Failed SLA | No SLA | % In SLA |")
 print("|--------|---------|----------|--------|------------|--------|----------|")
 
-for pillar_name in ["Scale", "Engage", "Growth", "Incubate", "Unassigned", "Unknown"]:
+for pillar_name in ["Scale", "Growth", "Engage", "Incubate", "Rebrand"]:
     if pillar_name not in pillar_stats:
         continue
     s = pillar_stats[pillar_name]
@@ -487,7 +489,7 @@ for pillar_name in ["Scale", "Engage", "Growth", "Incubate", "Unassigned", "Unkn
 print()
 print("### Pillar Team Breakdown")
 print()
-for pillar_name in ["Scale", "Engage", "Growth", "Incubate", "Unassigned"]:
+for pillar_name in ["Scale", "Growth", "Engage", "Incubate", "Rebrand"]:
     if pillar_name not in pillar_stats:
         continue
     teams = sorted(pillar_stats[pillar_name]["teams"])
