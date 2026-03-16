@@ -1,0 +1,44 @@
+{
+  "pillar_mapping": {
+    "Scale": [
+      "Clinical Experience",
+      "Pharmacy & Ops",
+      "Commerce",
+      "Payments",
+      "Category Tools",
+      "Patient Experience",
+      "Dev Productivity"
+    ],
+    "Growth": [
+      "Unified App",
+      "TRT",
+      "Weight Loss UK",
+      "Global Hair Loss",
+      "Weight Loss BR"
+    ],
+    "Engage": [
+      "Engagement",
+      "Content and Community",
+      "Engage Pillar",
+      "Medical Journey"
+    ],
+    "Incubate": [
+      "Voy Menopause",
+      "Diagnostics"
+    ],
+    "Rebrand": [
+      "Rebrand"
+    ]
+  },
+  "excluded_teams": [
+    "[QA] General Bugs Collection",
+    "Voyage Design System"
+  ],
+  "excluded_statuses": [
+    "Canceled",
+    "Cancelled",
+    "Duplicate"
+  ],
+  "bug_label": "Bug",
+  "lookback_days": 30
+}
